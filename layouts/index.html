@@ -3,17 +3,36 @@
     <head>
         <meta charset="UTF-8" />
         <title>{{ .Site.Title }}</title>
+        <link rel="stylesheet" href="/css/styles.css" />
     </head>
     <body>
-        <div class="container">
-            <div>This should have worked</div>
-            <div>
-                {{ range .Site.RegularPages }}
-                <h2>Title {{ .Params.title }}</h2>
-                <p>Description {{ .Description }}</p>
-                <p>Type: {{ .Type }}</p>
-                {{ end }}
+        <main>
+            <section>
+                <div class="container">
+                    <h1>Hey! I'm Ramon Ramon</h1>
+                    <p>30 year old cocktial maker, who makes good drinks</p>
+                </div>
+                <img
+                    src="https://blist.vercel.app/picture.jpg"
+                    alt="Picture of Ramon Ramon"
+                />
+            </section>
+            <div class="container">
+                <div class="cocktails">
+                    {{ range .Site.RegularPages }}
+                    <a href="{{ .Permalink }}">
+                        <div>
+                            <img
+                                src="{{ .Params.image }}"
+                                alt="{{ .Params.imageAlt }}"
+                            />
+                        </div>
+                        <div>{{ .Title }}</div>
+                        <div>{{ .Description }}</div>
+                    </a>
+                    {{ end }}
+                </div>
             </div>
-        </div>
+        </main>
     </body>
 </html>

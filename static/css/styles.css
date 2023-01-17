@@ -1,0 +1,12 @@
+section {
+    display: flex;
+}
+
+.cocktails {
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    max-width: 768px;
+}
