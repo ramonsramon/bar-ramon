@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{{ .Site.Title }}</title>
+    </head>
+    <body>
+        <div class="container">
+            <div>This should have worked</div>
+            <div>
+                {{ range .Site.RegularPages }}
+                <h2>Title {{ .Params.title }}</h2>
+                <p>Description {{ .Description }}</p>
+                <p>Type: {{ .Type }}</p>
+                {{ end }}
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Cocktails</title>
+    </head>
+    <body>
+        <p>Hello world</p>
+        {{ range .Pages }}
+        <p>URL: {{ .Permalink }}</p>
+        <p>Title: {{ .Title }}</p>
+        {{ end }}
+    </body>
+</html>
