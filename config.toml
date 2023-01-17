@@ -1,4 +1,3 @@
-baseURL = "http://example.org/"
+baseURL = "https://bar.aggieramon.com/"
 languageCode = "en-us"
-title = "My New Hugo Site"
-theme = "blist"
+title = "Bar Menu"
