@@ -1,7 +1,7 @@
 ---
 author: Ramon Ramon
 title: Manhattan
-description: Rye whiskey based cocktail very nice drinking
+description: Rittenhouse Rye Whiskey, Cocchi Vermouth Di Torino, Angostura Bitters, Cherry Garnish
 image: "https://blist.vercel.app/blog-post.jpg"
 imageAlt: Manhattan picture
 ---

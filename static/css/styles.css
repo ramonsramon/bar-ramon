@@ -1,12 +1,55 @@
-section {
-    display: flex;
+:root {
+    --fw-bold: 600;
+    --fs-large: 1.25rem;
+    --fs-color: white;
 }
 
-.cocktails {
-    display: flex;
+body {
+    margin: 0;
+    background-color: rgb(31, 41, 55);
+    color: var(--fs-color);
+}
+
+section {
+    background-color: rgb(17, 24, 39);
 }
 
 .container {
-    width: 100%;
     max-width: 768px;
+    padding: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro {
+    text-align: center;
+}
+
+.cocktails {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.cocktail {
+    padding: 0.5rem;
+}
+
+.cocktail-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cocktail-photo {
+    object-fit: cover;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 13rem;
+}
+
+.cocktail-name {
+    font-size: var(--fs-large);
+    font-weight: var(--fw-bold);
+    line-height: 1.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }

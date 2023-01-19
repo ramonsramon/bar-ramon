@@ -2,34 +2,36 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{{ .Site.Title }}</title>
         <link rel="stylesheet" href="/css/styles.css" />
     </head>
     <body>
         <main>
             <section>
-                <div class="container">
-                    <h1>Hey! I'm Ramon Ramon</h1>
-                    <p>30 year old cocktial maker, who makes good drinks</p>
+                <div class="intro container">
+                    <h1>Welcome To The Ramons!</h1>
+                    <p>Really good cocktails await you</p>
                 </div>
-                <img
-                    src="https://blist.vercel.app/picture.jpg"
-                    alt="Picture of Ramon Ramon"
-                />
             </section>
             <div class="container">
                 <div class="cocktails">
                     {{ range .Site.RegularPages }}
-                    <a href="{{ .Permalink }}">
-                        <div>
-                            <img
-                                src="{{ .Params.image }}"
-                                alt="{{ .Params.imageAlt }}"
-                            />
-                        </div>
-                        <div>{{ .Title }}</div>
-                        <div>{{ .Description }}</div>
-                    </a>
+                    <div class="cocktail">
+                        <a class="cocktail-link" href="{{ .Permalink }}">
+                            <div>
+                                <img
+                                    class="cocktail-photo"
+                                    src="{{ .Params.image }}"
+                                    alt="{{ .Params.imageAlt }}"
+                                />
+                            </div>
+                            <div class="cocktail-name">{{ .Title }}</div>
+                            <div class="cocktail-ingredients">
+                                {{ .Description }}
+                            </div>
+                        </a>
+                    </div>
                     {{ end }}
                 </div>
             </div>
