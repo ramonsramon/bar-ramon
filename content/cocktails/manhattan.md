@@ -6,4 +6,4 @@ image: "https://blist.vercel.app/blog-post.jpg"
 imageAlt: Manhattan picture
 ---
 
-This is a Manhantan
+This is a Manhattan
