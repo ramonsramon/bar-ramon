@@ -3,7 +3,7 @@ author: Ramon Ramon
 title: Boston Sour
 description: Angel's Envy Bourbon, Lemon Juice, Simple Syrup, Egg White
 image: "https://picsum.photos/400/250"
-imageAlt: Boston Sour Image
+imageAlt: Boston Sour
 ---
 
 ![Boston Sour](https://picsum.photos/400/250 "Picture of Boston Sour")
