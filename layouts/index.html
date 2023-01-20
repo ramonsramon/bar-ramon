@@ -1,40 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{{ .Site.Title }}</title>
-        <link rel="stylesheet" href="/css/styles.css" />
-    </head>
-    <body>
-        <main>
-            <section>
-                <div class="intro container">
-                    <h1>Welcome To The Ramons!</h1>
-                    <p>Really good cocktails await you</p>
-                </div>
-            </section>
-            <div class="container">
-                <div class="cocktails">
-                    {{ range .Site.RegularPages }}
-                    <div class="cocktail">
-                        <a class="cocktail-link" href="{{ .Permalink }}">
-                            <div>
-                                <img
-                                    class="cocktail-photo"
-                                    src="{{ .Params.image }}"
-                                    alt="{{ .Params.imageAlt }}"
-                                />
-                            </div>
-                            <div class="cocktail-name">{{ .Title }}</div>
-                            <div class="cocktail-ingredients">
-                                {{ .Description }}
-                            </div>
-                        </a>
-                    </div>
-                    {{ end }}
-                </div>
-            </div>
-        </main>
-    </body>
-</html>
+{{ define "main" }}
+<main>
+    <section class="intro">
+        <div class="container text-center">
+            <h1>Welcome To The Ramons!</h1>
+            <p>Really good cocktails await you</p>
+        </div>
+    </section>
+    {{ partial "cocktail-grid" .}}
+</main>
+{{ end }}

@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="cocktails">
+        {{ range .Site.RegularPages }}
+        <div class="padding-05">
+            <a class="cocktail-link" href="{{ .Permalink }}">
+                <div>
+                    <img
+                        class="cocktail-photo"
+                        src="{{ .Params.image }}"
+                        alt="{{ .Params.imageAlt }}"
+                    />
+                </div>
+                <div class="cocktail-name">{{ .Title }}</div>
+                <div class="cocktail-ingredients">{{ .Description }}</div>
+            </a>
+        </div>
+        {{ end }}
+    </div>
+</div>
