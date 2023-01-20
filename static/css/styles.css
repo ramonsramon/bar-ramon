@@ -10,9 +10,7 @@ body {
     color: var(--fs-color);
 }
 
-section {
-    background-color: rgb(17, 24, 39);
-}
+/* Utility */
 
 .container {
     max-width: 768px;
@@ -21,17 +19,23 @@ section {
     margin-right: auto;
 }
 
-.intro {
+.text-center {
     text-align: center;
+}
+
+.padding-05 {
+    padding: 0.5rem;
+}
+
+/* Home Page */
+
+.intro {
+    background-color: rgb(17, 24, 39);
 }
 
 .cocktails {
     display: grid;
     gap: 1.5rem;
-}
-
-.cocktail {
-    padding: 0.5rem;
 }
 
 .cocktail-link {
@@ -64,4 +68,22 @@ section {
     .cocktails {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+/* Instruction Page */
+
+#ingredients + ul {
+    padding: 0;
+}
+
+#ingredients + ul > li {
+    list-style: none;
+}
+
+#glass + ul {
+    padding: 0;
+}
+
+#glass + ul > li {
+    list-style: none;
 }

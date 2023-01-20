@@ -2,9 +2,13 @@
 author: Ramon Ramon
 title: Boston Sour
 description: Angel's Envy Bourbon, Lemon Juice, Simple Syrup, Egg White
-image: "https://i.picsum.photos/id/1050/400/250.jpg?hmac=aIppwE-YLtk-VJZER9_Um32dQMQK5sd1ZJeOH4X1JVo"
+image: "https://picsum.photos/400/250"
 imageAlt: Boston Sour Image
 ---
+
+![Boston Sour](https://picsum.photos/400/250 "Picture of Boston Sour")
+
+# Boston Sour
 
 ## GLASS
 
@@ -27,3 +31,5 @@ imageAlt: Boston Sour Image
 6. Shake for 30 seconds
 7. Pour into glass using the Hawthorne Strainer
 8. Enjoy
+
+{{< ytvideo width="400" height="250" src="https://www.youtube.com/embed/bxTRtiS06W0" >}}
