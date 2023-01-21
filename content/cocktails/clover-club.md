@@ -2,8 +2,35 @@
 author: Ramon Ramon
 title: The Clover Club
 description: Broker's London Dry Gin, Lemon Juice, Grenadine, Egg White, Raspberry
-image: "https://i.picsum.photos/id/1050/400/250.jpg?hmac=aIppwE-YLtk-VJZER9_Um32dQMQK5sd1ZJeOH4X1JVo"
-imageAlt: The Clover Club Image
+image: "https://picsum.photos/400/250"
+imageAlt: The Clover Club
 ---
 
-This is The Clover Club
+![The Clover Club](https://picsum.photos/400/250 "Picture of The Clover Club")
+
+# The Clover Club
+
+## GLASS
+
+-   Nick and Nora - Chilled in freezer
+
+## INGREDIENTS
+
+-   1.5oz Broker's London Dry Gin
+-   0.75oz Lemon Juice
+-   0.5oz Grenadine
+-   1 Egg White
+-   Garnish with Raspberry
+
+## INSTRUCTIONS
+
+1. Place glass into freezer before preparing the cocktail
+2. Add all ingredients to the larger side of the Boston Shaker
+3. Place small side of the Boston Shaker on the larger side of the Boston Shaker
+4. Shake for 15 seconds
+5. Remove small side of Boston Shaker, and fill small shaker up with ice
+6. Shake for 30 seconds
+7. Pour into glass using the Hawthorne Strainer
+8. Enjoy
+
+{{< ytvideo width="400" height="250" src="https://www.youtube.com/embed/MfHv2EOLUOo" >}}
