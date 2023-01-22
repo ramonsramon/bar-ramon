@@ -8,6 +8,7 @@ body {
     margin: 0;
     background-color: rgb(31, 41, 55);
     color: var(--fs-color);
+    font-family: "Inter", sans-serif;
 }
 
 img,
@@ -86,6 +87,7 @@ iframe {
 #glass + ul,
 #instructions + ol {
     padding: 0;
+    list-style-position: inside;
 }
 
 #ingredients + ul > li,
