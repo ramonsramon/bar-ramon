@@ -5,3 +5,4 @@ disableKinds:
   - taxonomy
   - taxonomyTerm
   - section
+  - sitemap
