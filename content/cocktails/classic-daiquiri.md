@@ -30,3 +30,5 @@ imageAlt: Classis Daiquiri
 5. Double strain into glass using the Hawthorne strainer and fine mesh strainer
 6. Garnish with Lime Wheel
 7. Enjoy
+
+{{< ytvideo width="400" height="250" src="https://www.youtube.com/embed/71jQRf5UrpE" >}}
