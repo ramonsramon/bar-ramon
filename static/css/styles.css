@@ -38,6 +38,10 @@ iframe {
     max-width: 450px;
 }
 
+.mw-1000 {
+    max-width: 1000px;
+}
+
 /* Home Page */
 
 .intro {
