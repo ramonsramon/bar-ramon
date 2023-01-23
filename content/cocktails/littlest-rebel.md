@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: The Littlest Rebel
 description: Laird's Straight Apple Brandy, Monkey Shoulder Blended Malt Scotch, Lime Juice, Grenadine, Egg White, Lime Oil
-image: "https://picsum.photos/400/250"
+image: "/img/littlest-rebel.jpg"
 imageAlt: The Littlest Rebel
 ---
 
-![The Littlest Rebel](https://picsum.photos/400/250 "Picture of The Littlest Rebel")
+![The Littlest Rebel](/img/littlest-rebel.jpg "Picture of The Littlest Rebel")
 
 # The Littlest Rebel
 

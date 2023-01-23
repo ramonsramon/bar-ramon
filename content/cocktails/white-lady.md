@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: The White Lady
 description: Plymouth Gin, Luxardo Triplum Triple Sec, Lemon Juice, Semi-Rich Simple Syrup, Egg White
-image: "https://picsum.photos/400/250"
+image: "/img/white-lady.jpg"
 imageAlt: The White Lady
 ---
 
-![The White Lady](https://picsum.photos/400/250 "Picture of The White Lady")
+![The White Lady](/img/white-lady.jpg "Picture of The White Lady")
 
 # The White Lady
 

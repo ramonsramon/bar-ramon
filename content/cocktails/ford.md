@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: The Ford
 description: Plymouth Gin, Dolin Vermouth De Chambery Dry, Benedictine DOM, Orange Bitters, Express Orange Peel
-image: "https://picsum.photos/400/250"
+image: "/img/ford.jpg"
 imageAlt: The Ford
 ---
 
-![The Ford](https://picsum.photos/400/250 "Picture of The Ford")
+![The Ford](/img/ford.jpg "Picture of The Ford")
 
 # The Ford
 

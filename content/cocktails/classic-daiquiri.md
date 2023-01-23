@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: Classic Daiquiri
 description: El Dorado Aged 3 Years Demerara Rum, Lime Juice, Semi-Rich Simple Syrup, Lime Wheel
-image: "https://picsum.photos/400/250"
+image: "/img/classic-daiquiri.jpg"
 imageAlt: Classic Daiquiri
 ---
 
-![Classic Daiquiri](https://picsum.photos/400/250 "Picture of Classic Daiquiri")
+![Classic Daiquiri](/img/classic-daiquiri.jpg "Picture of Classic Daiquiri")
 
 # Classic Daiquiri
 
