@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: Fence Hopper
 description: Angel's Envy Bourbon, Apple Cider, Maple Syrup, Lemon Juice, Angostura Bitters, IPA Beer, Cinnamon Stick
-image: "https://picsum.photos/400/250"
+image: "/img/fence-hopper.jpg"
 imageAlt: Fence Hopper
 ---
 
-![Fence Hopper](https://picsum.photos/400/250 "Picture of Fence Hopper")
+![Fence Hopper](/img/fence-hopper.jpg "Picture of Fence Hopper")
 
 # Fence Hopper
 

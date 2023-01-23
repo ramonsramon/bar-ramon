@@ -3,7 +3,7 @@ author: Ramon Ramon
 title: Classis Daiquiri
 description: El Dorado Aged 3 Years Demerara Rum, Lime Juice, Semi-Rich Simple Syrup, Lime Wheel
 image: "https://picsum.photos/400/250"
-imageAlt: Classis Daiquiri
+imageAlt: Classic Daiquiri
 ---
 
 ![Classic Daiquiri](https://picsum.photos/400/250 "Picture of Classic Daiquiri")
