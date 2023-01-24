@@ -1,6 +1,7 @@
 {
     "name": "Bar Menu",
-    "short_name": "barmenu",
+    "short_name": "Bar Menu",
+    "description": "Where you cocktail dreams come true",
     "icons": [
         {
             "src": "/appicons/favicon-128.png",
