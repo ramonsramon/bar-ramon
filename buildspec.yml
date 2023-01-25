@@ -3,8 +3,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - sudo apt update
-      - sudo apt install hugo -y
+      - sudo apt-get update
+      - sudo apt-get install hugo -y
       - hugo
 
 artifacts:
