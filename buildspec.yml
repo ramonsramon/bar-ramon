@@ -3,6 +3,7 @@ version: 0.2
 phases:
   build:
     commands:
+      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
       - sudo apt-get update
       - sudo apt-get install hugo -y
       - hugo
