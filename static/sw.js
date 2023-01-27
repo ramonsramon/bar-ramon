@@ -1,5 +1,5 @@
-const CACHE_VERSION = "v1";
-const CACHE_NAME = "barmenu-" + CACHE_VERSION;
+const CACHE_VERSION = "v2";
+const CACHE_NAME = "bar-ramon-" + CACHE_VERSION;
 const BASE_FILES = [
     "/index.html",
     "/404.html",
