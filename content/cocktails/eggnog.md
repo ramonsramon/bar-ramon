@@ -16,12 +16,11 @@ imageAlt: Eggnog
 
 ## INGREDIENTS
 
--   1oz Laird's Straight Apple Brandy
--   0.5oz Monkey Shoulder Blended Malt Scotch
--   0.75oz Lime Juice
--   0.5oz Grenadine
--   1 Egg White
--   Lime Peel to Express Oil
+-   1.5oz Demerara Rum
+-   0.5oz Lustau Amontillado Los Arcos Sherry
+-   1oz Rich Demerara Syrup
+-   2oz Half & Half
+-   Grated nutmeg for garnish
 
 ## INSTRUCTIONS
 
@@ -31,7 +30,7 @@ imageAlt: Eggnog
 4. Shake for 15 seconds
 5. Remove small side of Boston Shaker, and fill small shaker up with ice
 6. Shake for 30 seconds
-7. Double strain into glass using the Hawthorne Strainer and fine mesh strainer
+7. Strain into glass using hawthorne strainer
 8. Garnish with freshly grated nutmeg
 9. Enjoy
 
