@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: Hurricane
 description: Smith and Cross Jamaican Rum, Gosling's Black Seal Rum, Passion Fruit Syrup, Lemon Juice
-image: "https://picsum.photos/400/250"
+image: "/img/hurricane.jpg"
 imageAlt: Hurricane picture
 ---
 
-![Hurricane](https://picsum.photos/400/250 "Picture of Hurricane")
+![Hurricane](/img/hurricane.jpg "Picture of Hurricane")
 
 # Hurricane
 

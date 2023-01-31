@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: El Diablo
 description: Milagro Reposado Tequila, Gabriel Boudier Creme De Casis De Dijon, Lime Juice, Ginger Beer, Inverted Lime Rind
-image: "https://picsum.photos/400/250"
+image: "/img/el-diablo.jpg"
 imageAlt: El Diablo
 ---
 
-![El Diablo](https://picsum.photos/400/250 "Picture of El Diablo")
+![El Diablo](/img/el-diablo.jpg "Picture of El Diablo")
 
 # El Diablo
 

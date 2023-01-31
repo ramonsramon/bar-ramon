@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: Fish House Punch
 description: Pierre Ferrand 1840 Cognac, Appleton Estate Signature Jamaican Rum, Rothman & Winter Orchard Peach Liqueur, Laird's Straight Apple Brandy, Semi-Rich Simple Syrup, Lemon Juice, Cold Water, Nutmeg
-image: "https://picsum.photos/400/250"
+image: "/img/fish-house-punch.jpg"
 imageAlt: Fish House Punch
 ---
 
-![Fish House Punch](https://picsum.photos/400/250 "Picture of Fish House Punch")
+![Fish House Punch](/img/fish-house-punch.jpg "Picture of Fish House Punch")
 
 # Fish House Punch
 
