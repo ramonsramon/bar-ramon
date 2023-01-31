@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: Eggnog
 description: El Dorado Aged 3 Years Demerara Rum, Lustau Amontillado Los Arcos Sherry, Demerara Syrup, Half & Half, Whole Egg, Nutmeg
-image: "https://picsum.photos/400/250"
+image: "/img/eggnog.jpg"
 imageAlt: Eggnog
 ---
 
-![Eggnog](https://picsum.photos/400/250 "Picture of Eggnog")
+![Eggnog](/img/eggnog.jpg "Picture of Eggnog")
 
 # Eggnog
 

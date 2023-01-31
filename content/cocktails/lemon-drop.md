@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: Lemon Drop
 description: Gallant Vodka, Luxardo Triplum Triple Sec, Lemon Juice, Simple Syrup
-image: "https://picsum.photos/400/250"
+image: "/img/lemon-drop.jpg"
 imageAlt: Lemon Drop
 ---
 
-![Lemon Drop](https://picsum.photos/400/250 "Picture of Lemon Drop")
+![Lemon Drop](/img/lemon-drop.jpg "Picture of Lemon Drop")
 
 # Lemon Drop
 

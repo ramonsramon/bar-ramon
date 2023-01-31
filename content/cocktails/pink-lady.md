@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: The Pink Lady
 description: Broker's London Dry Gin, Laird's Apple Jack Brandy, Lemon Juice, Grenadine, Egg White, Cocktail Cherry
-image: "https://picsum.photos/400/250"
+image: "/img/pink-lady.jpg"
 imageAlt: The Pink Lady Image
 ---
 
-![The Pink Lady](https://picsum.photos/400/250 "Picture of The Pink Lady")
+![The Pink Lady](/img/pink-lady.jpg "Picture of The Pink Lady")
 
 # The Pink Lady
 

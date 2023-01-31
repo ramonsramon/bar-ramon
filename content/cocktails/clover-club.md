@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: The Clover Club
 description: Broker's London Dry Gin, Lemon Juice, Grenadine, Egg White, Raspberry
-image: "https://picsum.photos/400/250"
+image: "/img/clover-club.jpg"
 imageAlt: The Clover Club
 ---
 
-![The Clover Club](https://picsum.photos/400/250 "Picture of The Clover Club")
+![The Clover Club](/img/clover-club.jpg "Picture of The Clover Club")
 
 # The Clover Club
 

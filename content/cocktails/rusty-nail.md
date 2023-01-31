@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: Rusty Nail
 description: Monkey Shoulder Blended Malt Scotch, Drambuie, Lemon Oil
-image: "https://picsum.photos/400/250"
+image: "/img/rusty-nail.jpg"
 imageAlt: Rusty Nail picture
 ---
 
-![Rusty Nail](https://picsum.photos/400/250 "Picture of Rusty Nail")
+![Rusty Nail](/img/rusty-nail.jpg "Picture of Rusty Nail")
 
 # Rusty Nail
 

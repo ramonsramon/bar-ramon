@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: White Negroni
 description: Plymouth Gin, Lillet Blanc, Suze, Grapefruit Zest
-image: "https://picsum.photos/400/250"
+image: "/img/white-negroni.jpg"
 imageAlt: White Negroni
 ---
 
-![White Negroni](https://picsum.photos/400/250 "Picture of White Negroni")
+![White Negroni](/img/white-negroni.jpg "Picture of White Negroni")
 
 # White Negroni
 

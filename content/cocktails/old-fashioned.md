@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: Old Fashioned
 description: Angel's Envy Bourbon, Rich Demerara Syrup, Angostura Bitters, Orange Zest, Cocktail Cherry
-image: "https://picsum.photos/400/250"
+image: "/img/old-fashioned.jpg"
 imageAlt: Old Fashioned picture
 ---
 
-![Old Fashioned](https://picsum.photos/400/250 "Picture of Old Fashioned")
+![Old Fashioned](/img/old-fashioned.jpg "Picture of Old Fashioned")
 
 # Old Fashioned
 

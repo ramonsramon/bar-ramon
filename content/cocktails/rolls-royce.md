@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: The Rolls Royce
 description: Broker's London Dry Gin, Dolin Vermouth De Chambery Dry, Dolin Vermouth De Chambery Rouge, Benedictine DOM, Express Lemon Peel
-image: "https://picsum.photos/400/250"
+image: "/img/rolls-royce.jpg"
 imageAlt: The Rolls Royce
 ---
 
-![The Rolls Royce](https://picsum.photos/400/250 "Picture of The Rolls Royce")
+![The Rolls Royce](/img/rolls-royce.jpg "Picture of The Rolls Royce")
 
 # The Rolls Royce
 

@@ -2,11 +2,11 @@
 author: Ramon Ramon
 title: Rattle Skull
 description: Appleton Estate Signature Jamaican Rum, Pierre Ferrand 1840 Cognac, Lime Juice, Rich Demerara Syrup, Porter/Stout, Nutmeg
-image: "https://picsum.photos/400/250"
+image: "/img/rattle-skull.jpg"
 imageAlt: Rattle Skull
 ---
 
-![Rattle Skull](https://picsum.photos/400/250 "Picture of Rattle Skull")
+![Rattle Skull](/img/rattle-skull.jpg "Picture of Rattle Skull")
 
 # Rattle Skull
 
