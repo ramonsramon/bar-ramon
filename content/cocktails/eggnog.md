@@ -20,6 +20,7 @@ imageAlt: Eggnog
 -   0.5oz Lustau Amontillado Los Arcos Sherry
 -   1oz Rich Demerara Syrup
 -   2oz Half & Half
+-   1 Whole Egg
 -   Grated nutmeg for garnish
 
 ## INSTRUCTIONS
