@@ -1,7 +1,7 @@
 ---
 author: Ramon Ramon
 title: Pisco Sour
-description: La Diablada Pisco, Lemon Juice, Lime Juice, Egg White, Angostura Bitters
+description: La Diablada Pisco, Lemon Juice, Lime Juice, Semi-Rich Simple Syrup, Egg White, Angostura Bitters
 image: "/img/pisco-sour.jpg"
 imageAlt: Pisco Sour Image
 ---
