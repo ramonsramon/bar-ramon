@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v10";
+const CACHE_VERSION = "v11";
 const CACHE_NAME = "bar-ramon-" + CACHE_VERSION;
 const BASE_FILES = [
     "/index.html",
@@ -26,7 +26,9 @@ const BASE_FILES = [
     "/img/rolls-royce.jpg",
     "/img/white-lady.jpg",
     "/img/white-negroni.jpg",
-    "/img/siesta.jpg"
+    "/img/siesta.jpg",
+    "/img/margarita.jpg",
+    "/img/satan-whiskers.jpg"
 ];
 
 self.addEventListener("install", (e) => {
