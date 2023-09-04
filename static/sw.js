@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v13";
+const CACHE_VERSION = "v14";
 const CACHE_NAME = "bar-ramon-" + CACHE_VERSION;
 const BASE_FILES = [
     "/index.html",
@@ -51,7 +51,9 @@ self.addEventListener("fetch", (e) => {
             }
             const RES = await fetch(e.request);
             const CACHE = await caches.open(CACHE_NAME);
-            CACHE.put(e.request, RES.clone());
+            if (e.request && e.request.url && !e.request.url.startsWith("chrome-extension://")) {
+                CACHE.put(e.request, RES.clone());
+            }
             return RES;
         })()
     );

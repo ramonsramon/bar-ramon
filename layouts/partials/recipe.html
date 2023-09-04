@@ -1,0 +1,23 @@
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": {{ .Params.recipeName }},
+        "image": [
+            {{ path.Join $.Site.BaseURL $.Params.image }}
+        ],
+        "author": {
+            "@type": "Person",
+            "name": {{.Params.author}}
+        },
+        "datePublished": {{ .PublishDate | time.Format "2006-01-02" }},
+        "description": {{ .Description }},
+        "prepTime": {{ .Params.prepTime }},
+        "cookTime": {{ .Params.cookTime }},
+        "totalTime": {{ .Params.totalTime }},
+        "keywords": {{ delimit $.Params.keywords " " }},
+        "recipeYield": {{ .Params.recipeYield }},
+        "recipeCategory": {{ .Params.recipeCategory }},
+        "recipeIngredient": {{ .Params.recipeIngredients }}
+    } 
+</script>

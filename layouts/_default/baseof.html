@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="{{.Description}}">
         <title>{{ .Title }}</title>
         <link rel="manifest" href="/manifest.json" />
         <link rel="stylesheet" href="/css/styles.css" />
@@ -13,6 +14,9 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
             rel="stylesheet"
         />
+        {{ if eq .Params.recipeCategory "Drink" }} {{ partial "recipe" . }} {{ end }}
+        {{ if eq .Type "home" }} {{ partial "summary" . }} {{ end }}
+        </script>
     </head>
     <body>
         {{ block "main" .}} {{ end }}

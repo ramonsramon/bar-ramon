@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{{ $len := (len $.Site.RegularPages) }}
+{
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+    {{ range $i, $v := $.Site.RegularPages }}{
+            "@type": "ListItem {{ $len }}",
+            "position": {{ add $i 1 }},
+            "url": {{ $v.Permalink }}
+        }{{ if lt (add $i 1) $len }},{{ end }}
+        {{ end }}]
+}   
+</script>
