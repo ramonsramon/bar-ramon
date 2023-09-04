@@ -1,9 +1,24 @@
 ---
 author: Ramon Ramon
-title: Espresso Martini
-description: Mr. Black Cold Brew Coffee Liqueur, Gallant Vodka, Espresso, Rich Demerara Syrup, Lemon
-image: "/img/espresso-martini.jpg"
+title: How to make an Espresso Martini
+description: A digestif for after a meal, or if you just need a pick me up to keep the party going
+publishDate: 2023-08-31
+ingredients: Mr. Black Cold Brew Coffee Liqueur, Gallant Vodka, Espresso, Rich Demerara Syrup, Lemon
+recipeName: Espresso Martini
+image: /img/espresso-martini.jpg
 imageAlt: Espresso Martini picture
+prepTime: PT2M
+cookTime: PT3M
+totalTime: PT5M
+keywords: "espresso, coffee, vodka, chocolate"
+recipeYield: "1 serving"
+recipeCategory: "Drink"
+recipeIngredients:
+    - Mr. Black Cold Brew Coffee Liqueur
+    - Gallant Vodka
+    - Espresso
+    - Rich Demerara Syrup
+    - Expressed Lemon Oil
 ---
 
 ![Espresso Martini](/img/espresso-martini.jpg "Picture of Espresso Martini")
