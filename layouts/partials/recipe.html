@@ -1,14 +1,15 @@
 <script type="application/ld+json">
+{{ $instructions := (len .Params.recipeInstructions) }}
     {
         "@context": "https://schema.org/",
         "@type": "Recipe",
         "name": {{ .Params.recipeName }},
         "image": [
-            {{ path.Join $.Site.BaseURL $.Params.image }}
+            {{ absURL .Params.image }}
         ],
         "author": {
             "@type": "Person",
-            "name": {{.Params.author}}
+            "name": {{ .Params.author }}
         },
         "datePublished": {{ .PublishDate | time.Format "2006-01-02" }},
         "description": {{ .Description }},
@@ -16,8 +17,31 @@
         "cookTime": {{ .Params.cookTime }},
         "totalTime": {{ .Params.totalTime }},
         "keywords": {{ delimit $.Params.keywords " " }},
+        "recipeCuisine": {{ .Params.recipeCuisine }},
         "recipeYield": {{ .Params.recipeYield }},
         "recipeCategory": {{ .Params.recipeCategory }},
-        "recipeIngredient": {{ .Params.recipeIngredients }}
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": {{ .Params.ratingValue }},
+            "ratingCount": {{ .Params.ratingCount }}
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": {{ .Params.videoName }}
+            "contentUrl": {{ .Params.videoContentUrl }},
+            "embedUrl": {{ .Params.videoEmbedUrl }}
+        },
+        "nutrition": {
+            "@type": "NutritionInformation",
+            "calories": "{{ .Params.calories }} calories"
+        },
+        "recipeIngredient": {{ .Params.recipeIngredient }},
+        "recipeInstructions": [
+        {{ range $i, $v := .Params.recipeInstructions }}{
+               "@type": "HowToStep",
+               "text": {{ . }}
+            }{{ if lt (add $i 1) $instructions }},{{ end }}
+        {{ end }}]
+        // TODO add additional keys for recipe. Look at espresso martini front matter
     } 
 </script>
