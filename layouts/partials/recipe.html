@@ -27,7 +27,10 @@
         },
         "video": {
             "@type": "VideoObject",
-            "name": {{ .Params.videoName }}
+            "name": {{ .Params.videoName }},
+            "uploadDate": {{ .Params.videoUploadDate }},
+            "thumbnailUrl": {{ .Params.videoThumbnailUrl }},
+            "description": {{ .Params.videoDescription }},
             "contentUrl": {{ .Params.videoContentUrl }},
             "embedUrl": {{ .Params.videoEmbedUrl }}
         },
@@ -39,9 +42,9 @@
         "recipeInstructions": [
         {{ range $i, $v := .Params.recipeInstructions }}{
                "@type": "HowToStep",
-               "text": {{ . }}
+               "name": {{ $v.stepName }},
+               "text": {{ $v.stepDescription }}
             }{{ if lt (add $i 1) $instructions }},{{ end }}
         {{ end }}]
-        // TODO add additional keys for recipe. Look at espresso martini front matter
     } 
 </script>
