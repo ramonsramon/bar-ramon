@@ -17,7 +17,7 @@
     <h2 id="instructions">INSTRUCTIONS</h2>
     <ol>
     {{ range .Params.recipeInstructions }}
-        <li>{{ . }}</li>
+        <li>{{ .stepDescription }}</li>
     {{ end }}
     </ol>
     <iframe width="{{ .Params.videoWidth }}" height="{{ .Params.videoHeight }}" src="{{ .Params.videoEmbedUrl }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
