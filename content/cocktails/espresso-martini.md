@@ -3,7 +3,7 @@ author: Ramon Ramon
 title: How to make an Espresso Martini
 description: A digestif for after a meal, or if you just need a pick me up to keep the party going
 publishDate: 2023-08-31
-ingredients: Mr. Black Cold Brew Coffee Liqueur, Gallant Vodka, Espresso, Rich Demerara Syrup, Lemon
+rawIngredients: Mr. Black Cold Brew Coffee Liqueur, Gallant Vodka, Espresso, Rich Demerara Syrup, Lemon
 recipeName: Espresso Martini
 image: /img/espresso-martini.jpg
 imageAlt: Espresso Martini picture
@@ -34,7 +34,7 @@ recipeInstructions:
       stepDescription: Shake for 15 seconds
     - stepName: Serve
       stepDescription: Double strain into glass using the Hawthorne strainer and fine mesh strainer
-calories: 120
+calories: 175.5
 videoName: Espresso Martini - 2 ways!
 videoDescription: Anders Erickson showing how to make his version of the Espresso Martini
 videoContentUrl: https://youtu.be/q0ebbWwoI10?si=rJhd9WyYjVG82ABr

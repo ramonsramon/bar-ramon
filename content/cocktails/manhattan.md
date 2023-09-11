@@ -3,7 +3,7 @@ author: Ramon Ramon
 title: How to make a Manhattan
 description: A classic liquor forward cocktail for all ocassions
 publishDate: 2022-06-15
-ingredients: Rittenhouse Rye Whiskey, Cocchi Vermouth Di Torino, Angostura Bitters, Cherry Garnish
+rawIngredients: Rittenhouse Rye Whiskey, Cocchi Vermouth Di Torino, Angostura Bitters, Cherry Garnish
 recipeName: Manhattan
 image: /img/manhattan.jpg
 imageAlt: Manhattan picture
@@ -35,7 +35,7 @@ recipeInstructions:
       stepDescription: Double strain in to glass using Hawthorne strainer and fine mesh strainer
     - stepName: Add Garnish
       stepDescription: Add cocktail cherry
-calories: 120
+calories: 250
 videoName: How to Make a Manhattan | a simple classic cocktail recipe
 videoDescription: Anders Erickson shows how to make a Manhattan
 videoContentUrl: https://youtu.be/eWESf1b317Y?si=-4oi239lmPxQTN_5
