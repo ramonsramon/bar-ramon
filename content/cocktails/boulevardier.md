@@ -2,6 +2,7 @@
 author: Ramon Ramon
 title: How to make the Boulevardier
 description: Only drink if you like campari
+publishDate: 2022-03-12
 rawIngredients: Angel's Envy Bourbon, Cocchi Vermouth di Torino, Campari, Flamed Orange Peel
 recipeName: Boulevardier
 image: /img/boulevardier.jpg
