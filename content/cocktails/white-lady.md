@@ -3,7 +3,7 @@ author: Ramon Ramon
 title: How to make the White Lady
 description: Classic egg white gin cocktail
 publishDate: 2022-01-01
-description: Plymouth Gin, Luxardo Triplum Triple Sec, Lemon Juice, Semi-Rich Simple Syrup, Egg White
+rawIngredients: Plymouth Gin, Luxardo Triplum Triple Sec, Lemon Juice, Semi-Rich Simple Syrup, Egg White
 recipeName: White Lady
 image: /img/white-lady.jpg
 imageAlt: White Lady picture
