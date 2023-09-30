@@ -10,8 +10,8 @@
                         alt="{{ .Params.imageAlt }}"
                     />
                 </div>
-                <div class="cocktail-name">{{ .Title }}</div>
-                <div class="cocktail-ingredients">{{ .Description }}</div>
+                <div class="cocktail-name">{{ .Params.recipeName }}</div>
+                <div class="cocktail-ingredients">{{ .Params.rawIngredients }}</div>
             </a>
         </div>
         {{ end }}
