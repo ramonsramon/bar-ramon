@@ -1,36 +1,48 @@
 ---
 author: Ramon Ramon
-title: Old Fashioned
-description: Angel's Envy Bourbon, Rich Demerara Syrup, Angostura Bitters, Orange Zest, Cocktail Cherry
-image: "/img/old-fashioned.jpg"
+title: How to make an Old Fashioned
+description: The most classic cocktail
+publishDate: 2022-02-18
+rawIngredients: Angel's Envy Bourbon, Rich Demerara Syrup, Angostura Bitters, Orange Zest, Cocktail Cherry
+recipeName: Old Fashioned
+image: /img/old-fashioned.jpg
 imageAlt: Old Fashioned picture
+prepTime: PT1M
+cooktime: PT3M
+totalTime: PT4M
+keywords: classic, bourbon, liquor forward, old fashioned
+ratingValue: 5
+ratingCount: 1
+recipeGlass: Low Ball
+recipeYield: 1
+recipeCategory: Drink
+recipeCuisine: American
+recipeIngredient:
+    -   2oz Angel's Envy Bourbon
+    -   0.25 Rich Demerara Syrup
+    -   4 Dashes of Angostura Bitters
+    -   Orange Zest for Garnish
+    -   Cocktail Cherry for Garnish
+recipeInstructions:
+    - stepName: Chill glassware
+      stepDescription: Place glass into freezer before preparing the cocktail 
+    - stepName: Add ingredients
+      stepDescription: In a mixing glass add all ingredients 
+    - stepName: Add ice
+      stepDescription: Add ice to the mixing glass
+    - stepName: Stir
+      stepDescription: Stir for 30 seconds
+    - stepName: Serve
+      stepDescription: Double strain in to glass using Hawthorne strainer and fine mesh strainer
+    - stepName: Add Garnish
+      stepDescription: Add cocktail cherry and orange zest for garnish
+calories: 237.5
+videoName: How I Make an Old Fashioned | the ONE cocktail you must know
+videoDescription: Anders Erickson shows how to make a old fashioned
+videoContentUrl: https://youtu.be/pdcrJ5V7YKM?si=FkhQ_eFq8DgaMA6i
+videoEmbedUrl: https://www.youtube.com/embed/pdcrJ5V7YKM
+videoUploadDate: 2020-05-022T08:00:00+08:00
+videoThumbnailUrl: https://i.ytimg.com/vi/pdcrJ5V7YKM/maxresdefault.jpg
+videoWidth: 560
+videoHeight: 315
 ---
-
-![Old Fashioned](/img/old-fashioned.jpg "Picture of Old Fashioned")
-
-# Old Fashioned
-
-## GLASS
-
--   Low Ball - Chilled in freezer
-
-## INGREDIENTS
-
--   2oz Angel's Envy Bourbon
--   0.25 Rich Demerara Syrup
--   4 Dashes of Angostura Bitters
--   Orange Zest for Garnish
--   Cocktail Cherry for Garnish
-
-## INSTRUCTIONS
-
-1. Place glass into freezer before preparing the cocktail
-2. In a mixing glass add all ingredients
-3. Add ice to the mixing glass
-4. Stir for 15 seconds
-5. Double strain into glass over large ice cube using Hawthorne strainer and fine mesh strainer
-6. Add cocktail cherry
-7. Add Orange Zest
-8. Enjoy
-
-{{< ytvideo width="400" height="250" src="https://www.youtube.com/embed/pdcrJ5V7YKM" >}}

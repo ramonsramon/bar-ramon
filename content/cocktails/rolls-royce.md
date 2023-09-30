@@ -1,35 +1,48 @@
 ---
 author: Ramon Ramon
-title: The Rolls Royce
-description: Broker's London Dry Gin, Dolin Vermouth De Chambery Dry, Dolin Vermouth De Chambery Rouge, Benedictine DOM, Express Lemon Peel
-image: "/img/rolls-royce.jpg"
-imageAlt: The Rolls Royce
+title: How to make the Rolls Royce
+description: A spin on the Ford martini
+publishDate: 2022-07-16
+rawIngredients: Broker's London Dry Gin, Dolin Vermouth De Chambery Dry, Dolin Vermouth De Chambery Rouge, Benedictine DOM, Express Lemon Peel
+recipeName: Rolls Royce
+image: /img/rolls-royce.jpg
+imageAlt: Rolls Royce picture
+prepTime: PT1M
+cooktime: PT3M
+totalTime: PT4M
+keywords: gin, vermouth, liquor forward
+ratingValue: 3
+ratingCount: 1
+recipeGlass: Martini
+recipeYield: 1
+recipeCategory: Drink
+recipeCuisine: American
+recipeIngredient:
+    - 2oz Broker's London Dry Gin
+    - 0.5oz Dolin Vermouth De Chambery Dry
+    - 0.5oz Dolin Vermouth De Chambery Rouge
+    - Bar Spoon of Benedictine DOM
+    - Express Lemon Peel Oil
+recipeInstructions:
+    - stepName: Chill glassware
+      stepDescription: Place glass into freezer before preparing the cocktail 
+    - stepName: Add ingredients
+      stepDescription: In a mixing glass add all ingredients besides cocktail cherry
+    - stepName: Add ice
+      stepDescription: Add ice to the mixing glass
+    - stepName: Stir
+      stepDescription: Stir for 30 seconds
+    - stepName: Serve
+      stepDescription: Double strain in to glass using Hawthorne strainer and fine mesh strainer
+    - stepName: Add Garnish
+      stepDescription: Express lemon oil
+calories: 220
+videoName: Better than the martini? Rolls Royce vs Ford
+videoDescription: Anders Erickson shows how to make a Rolls Royce
+videoContentUrl: https://youtu.be/UJJqbCGHsOg?si=BW9maRLKLlfV0_9c
+videoEmbedUrl: https://www.youtube.com/embed/UJJqbCGHsOg
+videoUploadDate: 2022-04-08T08:00:00+08:00
+videoThumbnailUrl: https://i.ytimg.com/vi_webp/UJJqbCGHsOg/maxresdefault.webp
+videoWidth: 560
+videoHeight: 315
 ---
-
-![The Rolls Royce](/img/rolls-royce.jpg "Picture of The Rolls Royce")
-
-# The Rolls Royce
-
-## GLASS
-
--   Coup - Chilled in freezer
-
-## INGREDIENTS
-
--   2oz Broker's London Dry Gin
--   0.5oz Dolin Vermouth De Chambery Dry
--   0.5oz Dolin Vermouth De Chambery Rouge
--   Bar Spoon of Benedictine DOM
--   Express Lemon Peel Oil
-
-## INSTRUCTIONS
-
-1. Place glass into freezer before preparing the cocktail
-2. In a mixing glass add all ingredients
-3. Add ice to the mixing glass
-4. Stir for 30 seconds
-5. Double strain in to glass using Hawthorne strainer and fine mesh strainer
-6. Express Lemon Peel Oil
-7. Enjoy
-
-{{< ytvideo width="400" height="250" src="https://www.youtube.com/embed/UJJqbCGHsOg" >}}

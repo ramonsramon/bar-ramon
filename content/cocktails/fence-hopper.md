@@ -1,37 +1,50 @@
 ---
 author: Ramon Ramon
-title: Fence Hopper
-description: Angel's Envy Bourbon, Apple Cider, Maple Syrup, Lemon Juice, Angostura Bitters, IPA Beer, Cinnamon Stick
-image: "/img/fence-hopper.jpg"
-imageAlt: Fence Hopper
+title: How to make a Fence Hopper
+publishDate: 2023-03-24
+description: The best beer cocktail
+rawIngredients: Angel's Envy Bourbon, Apple Cider, Maple Syrup, Lemon Juice, Angostura Bitters, IPA Beer, Cinnamon Stick
+recipeName: Fence Hopper
+image: /img/fence-hopper.jpg
+imageAlt: Fence Hopper picture
+prepTime: PT1M
+cookTime: PT2M
+totalTime: PT3M
+keywords: bourbon, beer cocktail, apple, ipa
+ratingValue: 5
+ratingCount: 1
+recipeGlass: Beer
+recipeYield: 1
+recipeCategory: Drink
+recipeCuisine: American
+recipeIngredient:
+    -   1oz Angel's Envy Bourbon
+    -   1oz Apple Cider
+    -   0.5oz Maple Syrup
+    -   0.25oz Lemon Juice
+    -   2 Dashes Angostura Bitters
+    -   12oz IPA Beer
+    -   Cinnamon Stick Garnish
+recipeInstructions:
+    - stepName: Chill glassware
+      stepDescription: Place glass into freezer before preparing the cocktail 
+    - stepName: Add ingredients
+      stepDescription: Add all ingredients to large side of the Boston Shaker
+    - stepName: Add ice
+      stepDescription: Fill small side of Boston Shaker with ice
+    - stepName: Shake
+      stepDescription: Shake for 15 seconds
+    - stepName: Serve
+      stepDescription: Pour into glass using Hawthorne strainer while simultaneously pouring IPA
+    - stepName: Garnish
+      stepDescription: Garnish with Cinnamon Stick
+calories: 366.75
+videoName: Try these beer cocktails for fall!
+videoDescription: Anders Erickson showing how to make his original Fence Hopper
+videoContentUrl: https://youtu.be/Eg7DLBgwJqM?si=wi_FADB8GkunTnq5
+videoEmbedUrl: https://www.youtube.com/embed/Eg7DLBgwJqM
+videoUploadDate: 2022-10-14T08:00:00+08:00
+videoThumbnailUrl: https://i.ytimg.com/vi_webp/Eg7DLBgwJqM/maxresdefault.webp
+videoWidth: 560
+videoHeight: 315
 ---
-
-![Fence Hopper](/img/fence-hopper.jpg "Picture of Fence Hopper")
-
-# Fence Hopper
-
-## GLASS
-
--   Beer glass - Chilled in freezer
-
-## INGREDIENTS
-
--   1oz Angel's Envy Bourbon
--   1oz Apple Cider
--   0.5oz Maple Syrup
--   0.25oz Lemon Juice
--   2 Dashes Angostura Bitters
--   4oz IPA Beer
--   Cinnamon Stick Garnish
-
-## INSTRUCTIONS
-
-1. Place glass into freezer before preparing the cocktail
-2. Add bourbon, apple cider, maple syrup, lemon juice, and angostura bitters to large side of Boston Shaker
-3. Fill up small side of Boston Shaker with ice
-4. Shake for 15 seconds
-5. Pour into glass using Hawthorne strainer while simultaneously pouring IPA
-6. Garnish with Cinnamon Stick
-7. Enjoy
-
-{{< ytvideo width="400" height="250" src="https://www.youtube.com/embed/Eg7DLBgwJqM" >}}
