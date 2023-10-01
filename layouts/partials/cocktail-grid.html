@@ -1,6 +1,6 @@
 <div class="container mw-1000">
     <div class="cocktails">
-        {{ range .Site.RegularPages }}
+        {{ range sort .Site.RegularPages "Params.recipeName" }}
         <div class="padding-05">
             <a class="cocktail-link" href="{{ .RelPermalink }}index.html">
                 <div>
