@@ -2,7 +2,7 @@
 author: Ramon Ramon
 title: How to make Eggnog
 description: A classic holiday drink
-publishDate: 2022-12-07
+publishDate: "2023-10-05"
 rawIngredients: El Dorado Aged 3 Years Demerara Rum, Lustau Amontillado Los Arcos Sherry, Demerara Syrup, Half & Half, Whole Egg, Nutmeg
 recipeName: Eggnog
 image: /img/eggnog.jpg
@@ -18,15 +18,15 @@ recipeYield: 1
 recipeCategory: Drink
 recipeCuisine: American
 recipeIngredient:
-    -   1.5oz Demerara Rum
-    -   0.5oz Lustau Amontillado Los Arcos Sherry
-    -   1oz Rich Demerara Syrup
-    -   2oz Half & Half
-    -   1 Whole Egg
-    -   Grated nutmeg for garnish
+    - 1.5oz Demerara Rum
+    - 0.5oz Lustau Amontillado Los Arcos Sherry
+    - 1oz Rich Demerara Syrup
+    - 2oz Half & Half
+    - 1 Whole Egg
+    - Grated nutmeg for garnish
 recipeInstructions:
     - stepName: Chill glassware
-      stepDescription: Place glass into freezer before preparing the cocktail 
+      stepDescription: Place glass into freezer before preparing the cocktail
     - stepName: Add ingredients
       stepDescription: Add all ingredients to large side of the Boston Shaker
     - stepName: Add ice
@@ -46,7 +46,7 @@ videoName: 6 Decadent cocktails to get you through the holidays!
 videoDescription: Anders Erickson showing how to make his version of Eggnog
 videoContentUrl: https://youtu.be/s30L-iu171E?si=BswogUw0_qAfjWz4
 videoEmbedUrl: https://www.youtube.com/embed/s30L-iu171E
-videoUploadDate: 2022-12-02T08:00:00+08:00
+videoUploadDate: "2022-12-02T08:00:00+08:00"
 videoThumbnailUrl: https://i.ytimg.com/vi_webp/s30L-iu171E/maxresdefault.webp
 videoWidth: 560
 videoHeight: 315

@@ -2,13 +2,13 @@
 author: Ramon Ramon
 title: How to make a White Negroni
 description: A spin on the classic Negroni cocktail
-publishDate: 2022-09-15
+publishDate: "2023-10-05"
 rawIngredients: Plymouth Gin, Lillet Blanc, Suze, Grapefruit Zest
 recipeName: White Negroni
 image: /img/white-negroni.jpg
 imageAlt: White Negroni picture
 prepTime: PT1M
-cooktime: PT3M
+cookTime: PT3M
 totalTime: PT4M
 keywords: classic cocktail, negroni, liquor forward, earthy
 ratingValue: 4
@@ -24,7 +24,7 @@ recipeIngredient:
     - Grapefruit Zest for Garnish
 recipeInstructions:
     - stepName: Chill glassware
-      stepDescription: Place glass into freezer before preparing the cocktail 
+      stepDescription: Place glass into freezer before preparing the cocktail
     - stepName: Add ingredients
       stepDescription: In a mixing glass add all ingredients besides cocktail cherry
     - stepName: Add ice
@@ -40,7 +40,7 @@ videoName: Negroni Variation - The White Negroni
 videoDescription: Anders Erickson shows how to make a White Negroni
 videoContentUrl: https://youtu.be/fBax4HODqyA?si=wg7npt0KrTCZBKVi
 videoEmbedUrl: https://www.youtube.com/embed/fBax4HODqyA
-videoUploadDate: 2021-09-10T08:00:00+08:00
+videoUploadDate: "2021-09-10T08:00:00+08:00"
 videoThumbnailUrl: https://i.ytimg.com/vi_webp/fBax4HODqyA/maxresdefault.webp
 videoWidth: 560
 videoHeight: 315

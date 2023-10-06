@@ -2,7 +2,7 @@
 author: Ramon Ramon
 title: How to make the White Lady
 description: Classic egg white gin cocktail
-publishDate: 2022-01-01
+publishDate: "2023-10-05"
 rawIngredients: Plymouth Gin, Luxardo Triplum Triple Sec, Lemon Juice, Semi-Rich Simple Syrup, Egg White
 recipeName: White Lady
 image: /img/white-lady.jpg
@@ -25,7 +25,7 @@ recipeIngredient:
     - 1 Egg White
 recipeInstructions:
     - stepName: Chill glassware
-      stepDescription: Place glass into freezer before preparing the cocktail 
+      stepDescription: Place glass into freezer before preparing the cocktail
     - stepName: Add ingredients
       stepDescription: Add all ingredients to large side of the Boston Shaker
     - stepName: Add ice
@@ -45,7 +45,7 @@ videoName: How To Make The White Lady - then and now
 videoDescription: Anders Erickson showing how to make the White Lady
 videoContentUrl: https://youtu.be/IAmf7XqE0T8?si=V3WceF0abkKpHTvy
 videoEmbedUrl: https://www.youtube.com/embed/IAmf7XqE0T8
-videoUploadDate: 2021-06-25T08:00:00+08:00
+videoUploadDate: "2021-06-25T08:00:00+08:00"
 videoThumbnailUrl: https://i.ytimg.com/vi_webp/IAmf7XqE0T8/maxresdefault.webp
 videoWidth: 560
 videoHeight: 315

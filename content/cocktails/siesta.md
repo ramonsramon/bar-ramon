@@ -2,7 +2,7 @@
 author: Randall Mishler
 title: How to make the Siesta
 description: Randall's cocktail
-publishDate: 2022-02-24
+publishDate: "2023-10-05"
 rawIngredients: El Padrino De Mi Tierra Tequila Blanco, Campari, Grapefruit Juice, Lime Juice, Simple Syrup
 recipeName: Siesta
 image: /img/siesta.jpg
@@ -25,7 +25,7 @@ recipeIngredient:
     - 0.5oz Simple Syrup
 recipeInstructions:
     - stepName: Chill glassware
-      stepDescription: Place glass into freezer before preparing the cocktail 
+      stepDescription: Place glass into freezer before preparing the cocktail
     - stepName: Add ingredients
       stepDescription: Add all ingredients to large side of the Boston Shaker
     - stepName: Add ice

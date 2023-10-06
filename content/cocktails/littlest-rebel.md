@@ -2,7 +2,7 @@
 author: Ramon Ramon
 title: How to make the Littlest Rebel
 description: Fluffy scotch apple cocktail
-publishDate: 2022-02-17
+publishDate: "2023-10-05"
 rawIngredients: Laird's Straight Apple Brandy, Monkey Shoulder Blended Malt Scotch, Lime Juice, Grenadine, Egg White, Lime Oil
 recipeName: Littlest Rebel
 image: /img/littlest-rebel.jpg
@@ -18,15 +18,15 @@ recipeYield: 1
 recipeCategory: Drink
 recipeCuisine: American
 recipeIngredient:
-    -   1oz Laird's Straight Apple Brandy
-    -   0.5oz Monkey Shoulder Blended Malt Scotch
-    -   0.75oz Lime Juice
-    -   0.5oz Grenadine
-    -   1 Egg White
-    -   Lime Peel to Express Oil
+    - 1oz Laird's Straight Apple Brandy
+    - 0.5oz Monkey Shoulder Blended Malt Scotch
+    - 0.75oz Lime Juice
+    - 0.5oz Grenadine
+    - 1 Egg White
+    - Lime Peel to Express Oil
 recipeInstructions:
     - stepName: Chill glassware
-      stepDescription: Place glass into freezer before preparing the cocktail 
+      stepDescription: Place glass into freezer before preparing the cocktail
     - stepName: Add ingredients
       stepDescription: Add all ingredients to large side of the Boston Shaker
     - stepName: Add ice
@@ -46,7 +46,7 @@ videoName: 6 Decadent cocktails to get you through the holidays!
 videoDescription: Anders Erickson showing how to make the Littlest Rebel
 videoContentUrl: https://youtu.be/s30L-iu171E?si=N6P2teFpDidbBjPs
 videoEmbedUrl: https://www.youtube.com/embed/s30L-iu171E
-videoUploadDate: 2022-12-02T08:00:00+08:00
+videoUploadDate: "2022-12-02T08:00:00+08:00"
 videoThumbnailUrl: https://i.ytimg.com/vi_webp/s30L-iu171E/maxresdefault.webp
 videoWidth: 560
 videoHeight: 315

@@ -2,13 +2,13 @@
 author: Ramon Ramon
 title: How to make the Rolls Royce
 description: A spin on the Ford martini
-publishDate: 2022-07-16
+publishDate: "2023-10-05"
 rawIngredients: Broker's London Dry Gin, Dolin Vermouth De Chambery Dry, Dolin Vermouth De Chambery Rouge, Benedictine DOM, Express Lemon Peel
 recipeName: Rolls Royce
 image: /img/rolls-royce.jpg
 imageAlt: Rolls Royce picture
 prepTime: PT1M
-cooktime: PT3M
+cookTime: PT3M
 totalTime: PT4M
 keywords: gin, vermouth, liquor forward
 ratingValue: 3
@@ -25,7 +25,7 @@ recipeIngredient:
     - Express Lemon Peel Oil
 recipeInstructions:
     - stepName: Chill glassware
-      stepDescription: Place glass into freezer before preparing the cocktail 
+      stepDescription: Place glass into freezer before preparing the cocktail
     - stepName: Add ingredients
       stepDescription: In a mixing glass add all ingredients besides cocktail cherry
     - stepName: Add ice
@@ -41,7 +41,7 @@ videoName: Better than the martini? Rolls Royce vs Ford
 videoDescription: Anders Erickson shows how to make a Rolls Royce
 videoContentUrl: https://youtu.be/UJJqbCGHsOg?si=BW9maRLKLlfV0_9c
 videoEmbedUrl: https://www.youtube.com/embed/UJJqbCGHsOg
-videoUploadDate: 2022-04-08T08:00:00+08:00
+videoUploadDate: "2022-04-08T08:00:00+08:00"
 videoThumbnailUrl: https://i.ytimg.com/vi_webp/UJJqbCGHsOg/maxresdefault.webp
 videoWidth: 560
 videoHeight: 315

@@ -2,7 +2,7 @@
 author: Ramon Ramon
 title: How to make a Pisco Sour
 description: Classic peruvian cocktail
-publishDate: 2021-09-05
+publishDate: "2023-10-05"
 rawIngredients: La Diablada Pisco, Lemon Juice, Lime Juice, Semi-Rich Simple Syrup, Egg White, Angostura Bitters
 recipeName: Pisco Sour
 image: /img/pisco-sour.jpg
@@ -18,15 +18,15 @@ recipeYield: 1
 recipeCategory: Drink
 recipeCuisine: American
 recipeIngredient:
-    -   2oz La Diablada Pisco
-    -   0.5oz Fresh Lemon Juice
-    -   0.5oz Fresh Lime Juice
-    -   0.75oz Semi-Rich Simple Syrup
-    -   1 Egg White
-    -   1 Drop of Angostura Biiters for Garnish
+    - 2oz La Diablada Pisco
+    - 0.5oz Fresh Lemon Juice
+    - 0.5oz Fresh Lime Juice
+    - 0.75oz Semi-Rich Simple Syrup
+    - 1 Egg White
+    - 1 Drop of Angostura Biiters for Garnish
 recipeInstructions:
     - stepName: Chill glassware
-      stepDescription: Place glass into freezer before preparing the cocktail 
+      stepDescription: Place glass into freezer before preparing the cocktail
     - stepName: Add ingredients
       stepDescription: Add all ingredients to large side of the Boston Shaker
     - stepName: Add ice
@@ -48,7 +48,7 @@ videoName: The Pisco Sour - a perfect sour cocktail recipe
 videoDescription: Anders Erickson showing how to make the Pisco Sour
 videoContentUrl: https://youtu.be/FdAQ96mYwNQ?si=q1yBywBJTO92xIQu
 videoEmbedUrl: https://www.youtube.com/embed/FdAQ96mYwNQ
-videoUploadDate: 2021-02-05T08:00:00+08:00
+videoUploadDate: "2021-02-05T08:00:00+08:00"
 videoThumbnailUrl: https://i.ytimg.com/vi_webp/FdAQ96mYwNQ/maxresdefault.webp
 videoWidth: 560
 videoHeight: 315

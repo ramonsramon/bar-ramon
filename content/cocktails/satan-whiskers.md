@@ -2,7 +2,7 @@
 author: Ramon Ramon
 title: How to make the Satan's Whiskers
 description: Orange flavored cocktail
-publishDate: 2022-05-13
+publishDate: "2023-10-05"
 rawIngredients: Plymouth Gin, Dolin Vermouth de Chambery Dry, Dolin Vermouth de Chambery Rouge, Pierre Ferrand Dry Curcao, Orange Juice, Orange Bitters
 recipeName: Satan's Whiskers
 image: /img/satan-whiskers.jpg
@@ -26,7 +26,7 @@ recipeIngredient:
     - 1 Dash of Orange Bitters
 recipeInstructions:
     - stepName: Chill glassware
-      stepDescription: Place glass into freezer before preparing the cocktail 
+      stepDescription: Place glass into freezer before preparing the cocktail
     - stepName: Add ingredients
       stepDescription: Add all ingredients to large side of the Boston Shaker
     - stepName: Add ice
@@ -40,7 +40,7 @@ videoName: An Old Gin Classic - SATAN'S WHISKERS
 videoDescription: Anders Erickson showing how to make the Satan's Whiskers
 videoContentUrl: https://youtu.be/T3GsJVVGCFs?si=_Y-SCAr0osCsjWeZ
 videoEmbedUrl: https://www.youtube.com/embed/T3GsJVVGCFs
-videoUploadDate: 2021-10-22T08:00:00+08:00
+videoUploadDate: "2021-10-22T08:00:00+08:00"
 videoThumbnailUrl: https://i.ytimg.com/vi_webp/T3GsJVVGCFs/maxresdefault.webp
 videoWidth: 560
 videoHeight: 315

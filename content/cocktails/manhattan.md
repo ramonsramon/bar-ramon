@@ -2,13 +2,13 @@
 author: Ramon Ramon
 title: How to make a Manhattan
 description: A classic liquor forward cocktail for all ocassions
-publishDate: 2022-06-15
+publishDate: "2023-10-05"
 rawIngredients: Rittenhouse Rye Whiskey, Cocchi Vermouth Di Torino, Angostura Bitters, Cherry Garnish
 recipeName: Manhattan
 image: /img/manhattan.jpg
 imageAlt: Manhattan picture
 prepTime: PT1M
-cooktime: PT3M
+cookTime: PT3M
 totalTime: PT4M
 keywords: classic cocktail, rye whiskey, liquor forward, cherry garnish
 ratingValue: 5
@@ -24,7 +24,7 @@ recipeIngredient:
     - 1 Cocktail Cherry
 recipeInstructions:
     - stepName: Chill glassware
-      stepDescription: Place glass into freezer before preparing the cocktail 
+      stepDescription: Place glass into freezer before preparing the cocktail
     - stepName: Add ingredients
       stepDescription: In a mixing glass add all ingredients besides cocktail cherry
     - stepName: Add ice
@@ -40,7 +40,7 @@ videoName: How to Make a Manhattan | a simple classic cocktail recipe
 videoDescription: Anders Erickson shows how to make a Manhattan
 videoContentUrl: https://youtu.be/eWESf1b317Y?si=-4oi239lmPxQTN_5
 videoEmbedUrl: https://www.youtube.com/embed/eWESf1b317Y
-videoUploadDate: 2020-05-01T08:00:00+08:00
+videoUploadDate: "2020-05-01T08:00:00+08:00"
 videoThumbnailUrl: https://i.ytimg.com/vi/eWESf1b317Y/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDbITE_8xgb_XqQ5uwEOz0o_WuC_A
 videoWidth: 560
 videoHeight: 315

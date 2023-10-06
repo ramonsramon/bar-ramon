@@ -2,7 +2,7 @@
 author: Ramon Ramon
 title: How to make a Lemon Drop
 description: Sweet lemon martini
-publishDate: 2022-03-21
+publishDate: "2023-10-05"
 rawIngredients: Gallant Vodka, Luxardo Triplum Triple Sec, Lemon Juice, Simple Syrup
 recipeName: Lemon Drop
 image: /img/lemon-drop.jpg
@@ -18,13 +18,13 @@ recipeYield: 1
 recipeCategory: Drink
 recipeCuisine: American
 recipeIngredient:
-    -   2oz Gallant Vodka
-    -   0.5oz Luxardo Triplum Triple Sec
-    -   1oz Lemon Juice
-    -   1oz Simple Syrup
+    - 2oz Gallant Vodka
+    - 0.5oz Luxardo Triplum Triple Sec
+    - 1oz Lemon Juice
+    - 1oz Simple Syrup
 recipeInstructions:
     - stepName: Chill glassware
-      stepDescription: Place glass into freezer before preparing the cocktail 
+      stepDescription: Place glass into freezer before preparing the cocktail
     - stepName: Add ingredients
       stepDescription: Add all ingredients to large side of the Boston Shaker
     - stepName: Add ice

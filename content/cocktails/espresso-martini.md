@@ -2,7 +2,7 @@
 author: Ramon Ramon
 title: How to make an Espresso Martini
 description: A digestif for after a meal, or if you just need a pick me up to keep the party going
-publishDate: 2023-08-31
+publishDate: "2023-10-05"
 rawIngredients: Mr. Black Cold Brew Coffee Liqueur, Gallant Vodka, Espresso, Rich Demerara Syrup, Lemon
 recipeName: Espresso Martini
 image: /img/espresso-martini.jpg
@@ -25,7 +25,7 @@ recipeIngredient:
     - 1 swath expressed lemon oil
 recipeInstructions:
     - stepName: Chill Glassware
-      stepDescription: Place glass into freezer before preparing the cocktail 
+      stepDescription: Place glass into freezer before preparing the cocktail
     - stepName: Add ingredients
       stepDescription: Add all ingredients to large side of the Boston Shaker
     - stepName: Add ice
@@ -39,7 +39,7 @@ videoName: Espresso Martini - 2 ways!
 videoDescription: Anders Erickson showing how to make his version of the Espresso Martini
 videoContentUrl: https://youtu.be/q0ebbWwoI10?si=rJhd9WyYjVG82ABr
 videoEmbedUrl: https://www.youtube.com/embed/q0ebbWwoI10?si=a3vvvFawdXNv_w0B
-videoUploadDate: 2021-12-03T08:00:00+08:00
+videoUploadDate: "2021-12-03T08:00:00+08:00"
 videoThumbnailUrl: https://i.ytimg.com/vi/q0ebbWwoI10/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB1Kx8q7swMuXHNYvPlpokrWucGgA
 videoWidth: 560
 videoHeight: 315

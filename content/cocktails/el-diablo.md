@@ -2,7 +2,7 @@
 author: Ramon Ramon
 title: How to make the El Diablo
 description: A tequila classic
-publishDate: 2023-02-23
+publishDate: "2023-10-05"
 rawIngredients: Milagro Reposado Tequila, Gabriel Boudier Creme De Casis De Dijon, Lime Juice, Ginger Beer, Inverted Lime Rind
 recipeName: El Diablo
 image: /img/el-diablo.jpg
@@ -18,14 +18,14 @@ recipeYield: 1
 recipeCategory: Drink
 recipeCuisine: American
 recipeIngredient:
-    -   1.5oz Milagro Reposado Tequila
-    -   0.5oz Gabriel Boudier Creme De Casis De Dijon
-    -   0.5oz Lime Juice (Straight from Lime)
-    -   3oz Ginger Beer
-    -   Inverted Lime Rind Filled with Creme De Casis for interactive Garnish
+    - 1.5oz Milagro Reposado Tequila
+    - 0.5oz Gabriel Boudier Creme De Casis De Dijon
+    - 0.5oz Lime Juice (Straight from Lime)
+    - 3oz Ginger Beer
+    - Inverted Lime Rind Filled with Creme De Casis for interactive Garnish
 recipeInstructions:
     - stepName: Chill glassware
-      stepDescription: Place glass into freezer before preparing the cocktail 
+      stepDescription: Place glass into freezer before preparing the cocktail
     - stepName: Add tequila
       stepDescription: Add Milagro Reposado Tequila to large side of Boston Shaker
     - stepName: Add lime juice
@@ -49,7 +49,7 @@ videoName: El Diablo - 2 ways to make a tequila classic!
 videoDescription: Anders Erickson showing how to make the El Diablo
 videoContentUrl: https://youtu.be/xN3ymSPZJjY?si=krXOi_W3dgfvRsb3
 videoEmbedUrl: https://www.youtube.com/embed/xN3ymSPZJjY
-videoUploadDate: 2022-07-01T08:00:00+08:00
+videoUploadDate: "2022-07-01T08:00:00+08:00"
 videoThumbnailUrl: https://i.ytimg.com/vi/xN3ymSPZJjY/maxresdefault.jpg
 videoWidth: 560
 videoHeight: 315

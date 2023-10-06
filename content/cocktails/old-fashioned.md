@@ -2,13 +2,13 @@
 author: Ramon Ramon
 title: How to make an Old Fashioned
 description: The most classic cocktail
-publishDate: 2022-02-18
+publishDate: "2023-10-05"
 rawIngredients: Angel's Envy Bourbon, Rich Demerara Syrup, Angostura Bitters, Orange Zest, Cocktail Cherry
 recipeName: Old Fashioned
 image: /img/old-fashioned.jpg
 imageAlt: Old Fashioned picture
 prepTime: PT1M
-cooktime: PT3M
+cookTime: PT3M
 totalTime: PT4M
 keywords: classic, bourbon, liquor forward, old fashioned
 ratingValue: 5
@@ -18,16 +18,16 @@ recipeYield: 1
 recipeCategory: Drink
 recipeCuisine: American
 recipeIngredient:
-    -   2oz Angel's Envy Bourbon
-    -   0.25 Rich Demerara Syrup
-    -   4 Dashes of Angostura Bitters
-    -   Orange Zest for Garnish
-    -   Cocktail Cherry for Garnish
+    - 2oz Angel's Envy Bourbon
+    - 0.25 Rich Demerara Syrup
+    - 4 Dashes of Angostura Bitters
+    - Orange Zest for Garnish
+    - Cocktail Cherry for Garnish
 recipeInstructions:
     - stepName: Chill glassware
-      stepDescription: Place glass into freezer before preparing the cocktail 
+      stepDescription: Place glass into freezer before preparing the cocktail
     - stepName: Add ingredients
-      stepDescription: In a mixing glass add all ingredients 
+      stepDescription: In a mixing glass add all ingredients
     - stepName: Add ice
       stepDescription: Add ice to the mixing glass
     - stepName: Stir
