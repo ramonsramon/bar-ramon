@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v17";
+const CACHE_VERSION = "v18";
 const CACHE_NAME = "bar-ramon-" + CACHE_VERSION;
 const BASE_FILES = [
     "/index.html",
