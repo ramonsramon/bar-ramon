@@ -4,9 +4,10 @@ import { BrowserModule } from "@angular/platform-browser"
 import { AppRoutingModule } from "./app-routing.module"
 import { AppComponent } from "./app.component"
 import { HomePageComponent } from "./home-page/home-page.component"
-import { initializeApp, provideFirebaseApp } from "@angular/fire/app"
 import { environment } from "src/environments/environment.development"
+import { initializeApp, provideFirebaseApp } from "@angular/fire/app"
 import { getFirestore, provideFirestore } from "@angular/fire/firestore"
+import { provideAnalytics, getAnalytics } from "@angular/fire/analytics"
 import { CocktailPageComponent } from "./cocktail-page/cocktail-page.component"
 import { BarRamonService } from "./bar-ramon.service"
 import { CocktailCardComponent } from "./cocktail-card/cocktail-card.component"
@@ -39,6 +40,7 @@ import { ServiceWorkerModule } from "@angular/service-worker"
         AppRoutingModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideFirestore(() => getFirestore()),
+        provideAnalytics(() => getAnalytics()),
         BrowserAnimationsModule,
         MatIconModule,
         MatButtonModule,
