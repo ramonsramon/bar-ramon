@@ -2,10 +2,8 @@
 author: Ramon Ramon
 title: How to make the Ford
 description: Classic gin martini
-publishDate: 2022-08-18
+publishDate: 2023-10-05
 rawIngredients: Plymouth Gin, Dolin Vermouth De Chambery Dry, Benedictine DOM, Orange Bitters, Express Orange Peel
-image: "/img/ford.jpg"
-imageAlt: The Ford
 recipeName: Ford
 image: /img/ford.jpg
 imageAlt: Ford picture
