@@ -1,0 +1,11 @@
+<div class="cocktailList">
+      <a class="link" [routerLink]="cocktailLink">
+            <div>
+                  <img class="photo" [src]="'assets' + cocktail.Image" [alt]="cocktail.ImageAlt">
+            </div>
+            <div class="info">
+                  <p>{{ cocktail.RecipeName }}</p>
+                  <bubble>{{ cocktail.PrimarySpirit }}</bubble>
+            </div>
+      </a>
+</div>

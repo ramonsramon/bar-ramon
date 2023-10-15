@@ -1,0 +1,88 @@
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+mat-icon {
+    transform: scale(2);
+    font-weight: 600;
+}
+
+hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.nav-logo {
+    text-decoration: none;
+    color: inherit;
+    margin-right: auto;
+}
+
+.nav-logo > h1 {
+    margin: 0;
+}
+
+.nav-desktop-menu {
+    display: none;
+}
+
+.nav-popout-links {
+    padding: 1rem;
+    width: 95%;
+}
+
+.nav-popout-links > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.25rem;
+}
+
+/* Tablet Breakpoint */
+@media (min-width: 834px) {
+    .nav-desktop-menu {
+        display: block;
+    }
+
+    .nav-desktop-menu a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 1.25rem;
+    }
+
+    .nav-desktop-menu a:not(:first-child) {
+        margin-left: 2rem;
+    }
+
+    .nav-container button,
+    .nav-popout {
+        display: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .nav {
+        background-color: var(--light-grey);
+    }
+
+    mat-icon {
+        color: var(--white);
+    }
+}

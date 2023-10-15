@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="center">
+        <div class="container-grid">
+            <div class="intro">
+                <h2>{{ cocktail.RecipeName }}</h2>
+                <img
+                    *ngIf="cocktail.Image"
+                    class="cocktail-photo"
+                    [src]="'assets/' + cocktail.Image"
+                    [alt]="cocktail.ImageAlt"
+                />
+            </div>
+            <div class="info">
+                <h2>Ingredients</h2>
+                <ul class="ingredients-list">
+                    <li
+                        class="ingredients-list-item"
+                        *ngFor="let ingredient of cocktail.RecipeIngredient"
+                    >
+                        <bubble>{{ ingredient }}</bubble>
+                    </li>
+                </ul>
+                <h2>Glass</h2>
+                <bubble>{{ cocktail.RecipeGlass }}</bubble>
+                <h2 class="instructions-heading">Instructions</h2>
+                <ol class="instructions-list">
+                    <li
+                        class="instructions-list-item"
+                        *ngFor="let instruction of cocktail.RecipeInstructions"
+                    >
+                        {{ instruction.StepDescription }}
+                    </li>
+                </ol>
+                <more-info
+                    [rating]="cocktail.RatingValue"
+                    [servingSize]="cocktail.RecipeYield"
+                    [prepTime]="cocktail.PrepTime"
+                    [cookTime]="cocktail.CookTime"
+                    [totalTime]="cocktail.TotalTime"
+                    [calories]="cocktail.Calories"
+                    [description]="cocktail.Description"
+                ></more-info>
+            </div>
+            <iframe
+                *ngIf="cocktail.VideoWidth > 0"
+                [width]="cocktail.VideoWidth"
+                [height]="cocktail.VideoHeight"
+                [src]="trustedVideoSrc"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen=""
+            ></iframe>
+        </div>
+    </div>
+</div>

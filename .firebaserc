@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "bar-ramon"
+  },
+  "targets": {
+    "bar-ramon": {
+      "hosting": {
+        "bar-ramon": [
+          "bar-ramon"
+        ]
+      }
+    }
+  }
+}

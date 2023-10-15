@@ -1,0 +1,12 @@
+.bubble {
+    color: var(--white);
+    background-color: var(--light-grey-shade-light);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .bubble {
+        background-color: var(--light-grey-shade-dark);
+    }
+}

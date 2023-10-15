@@ -1,0 +1,9 @@
+.title {
+    color: var(--dark-grey);
+}
+
+@media (prefers-color-scheme: dark) {
+    .title {
+        color: var(--white);
+    }
+}

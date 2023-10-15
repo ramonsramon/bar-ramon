@@ -1,0 +1,130 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+@import "@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$bar-ramon-config: mat.define-typography-config(
+    $headline-5: mat.define-typography-level(32px, 2, 700, Playfair Display),
+    $headline-6: mat.define-typography-level(32px, 2, 700, Playfair Display),
+    $body-1: mat.define-typography-level(16px, 1.5, 400, Montserrat),
+    $body-2: mat.define-typography-level(16px, 1.5, 400, Montserrat),
+);
+
+@include angular-material-typography($bar-ramon-config);
+
+$lavendar-palette: (
+    50: #f7e0f7,
+    100: #e9b1ec,
+    200: #d57eda,
+    300: #bd4ac4,
+    400: #ac15b5,
+    500: #9a00a6,
+    600: #8c00a1,
+    700: #79009b,
+    800: #670094,
+    900: #430088,
+    contrast: (
+        50: #121212,
+        100: #121212,
+        200: #121212,
+        300: white,
+        400: white,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+    ),
+);
+
+$green-palette: (
+    50: #ecfaec,
+    100: #d1f3cf,
+    200: #b4ecb1,
+    300: #96e592,
+    400: #80dc7a,
+    500: #6cd562,
+    600: #62c458,
+    700: #55b14c,
+    800: #4a9f42,
+    900: #367e30,
+    contrast: (
+        50: #121212,
+        100: #121212,
+        200: #121212,
+        300: white,
+        400: white,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+    ),
+);
+
+$red-palette: (
+    50: #f8dfe2,
+    100: #ecb1b4,
+    200: #c86e6a,
+    300: #a93636,
+    400: #a3000b,
+    500: #990000,
+    600: #8e0000,
+    700: #800000,
+    800: #740000,
+    900: #670000,
+    contrast: (
+        50: #121212,
+        100: #121212,
+        200: #121212,
+        300: white,
+        400: white,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+    ),
+);
+
+$bar-ramon-primary: mat.define-palette($lavendar-palette, 100);
+$bar-ramon-accent: mat.define-palette($green-palette, 200);
+
+// The warn palette is optional (defaults to red).
+$bar-ramon-warn: mat.define-palette($red-palette, 100);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$bar-ramon-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $bar-ramon-primary,
+            accent: $bar-ramon-accent,
+            warn: $bar-ramon-warn,
+        ),
+    )
+);
+
+$bar-ramon-theme: mat.define-dark-theme(
+    (
+        color: (
+            primary: $bar-ramon-primary,
+            accent: $bar-ramon-accent,
+            warn: $bar-ramon-warn,
+        ),
+    )
+);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($bar-ramon-theme);

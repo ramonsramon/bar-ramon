@@ -1,0 +1,66 @@
+/* Globals */
+:root {
+    --fw-bold: 600;
+    --fs-large: 1.25rem;
+    --white: #ffffff;
+    --dark-grey: #121212;
+    --light-grey: #2a2a2a;
+    --light-grey-shade-dark: #3f3f3f;
+    --light-grey-shade-light: #999999;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: var(--white);
+    color: var(--dark-grey);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+p {
+    margin: 0;
+}
+
+img,
+iframe {
+    width: 100%;
+}
+
+.container {
+    padding: 7rem 1.5rem 1.5rem 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Utiliy Classes */
+
+.text-center {
+    text-align: center;
+}
+
+.padding-05 {
+    padding: 0.5rem;
+}
+
+.mw-450 {
+    max-width: 450px;
+}
+
+.mw-1000 {
+    max-width: 1000px;
+}
+
+.hide {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark-grey);
+        color: var(--white);
+    }
+}

@@ -1,0 +1,28 @@
+button {
+    display: block;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    margin-top: 1rem;
+}
+
+.info > div > p:first-child,
+.description > p:first-child {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.description {
+    margin-top: 1rem;
+}
+
+@media (min-width: 834px) {
+    .info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}

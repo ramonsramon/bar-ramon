@@ -1,0 +1,23 @@
+<div class="nav">
+    <div class="nav-container">
+        <a class="nav-logo" routerLink="/">
+            <h1>Bar Ramon</h1>
+        </a>
+        <button (click)="togglePopout()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div class="nav-desktop-menu">
+            <ng-container *ngFor="let navLink of navLinks">
+                <a [routerLink]="navLink.path">{{ navLink.title }}</a>
+            </ng-container>
+        </div>
+    </div>
+    <div class="nav-popout" [ngClass]="{ hide: isHidden }">
+        <div class="nav-popout-links">
+            <ng-container *ngFor="let navLink of navLinks">
+                <a [routerLink]="navLink.path">{{ navLink.title }}</a>
+                <hr />
+            </ng-container>
+        </div>
+    </div>
+</div>

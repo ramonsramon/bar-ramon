@@ -1,0 +1,35 @@
+<button mat-raised-button color="primary" (click)="toggleIsHidden()">
+    {{ buttonText }}
+</button>
+<div [ngClass]="{ hide: isHidden }">
+    <div class="info">
+        <div>
+            <p>Rating</p>
+            <rating [rating]="rating"></rating>
+        </div>
+        <div>
+            <p>Serving Size</p>
+            <p>{{ servingSize }} person</p>
+        </div>
+        <div>
+            <p>Prep Time</p>
+            <p>{{ prepTime | recipeTime }}</p>
+        </div>
+        <div>
+            <p>Mixing Time</p>
+            <p>{{ cookTime | recipeTime }}</p>
+        </div>
+        <div>
+            <p>Total Time</p>
+            <p>{{ totalTime | recipeTime }}</p>
+        </div>
+        <div>
+            <p>Calories</p>
+            <p>{{ calories }}</p>
+        </div>
+    </div>
+    <div class="description">
+        <p>Description</p>
+        <p>{{ description }}</p>
+    </div>
+</div>
