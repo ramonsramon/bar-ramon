@@ -9,6 +9,7 @@ import { Cocktail, EMPTY_COCKTAIL } from "../models/cocktail"
 export class CocktailCardComponent implements OnInit {
     @Input({ required: true }) cocktail: Cocktail = EMPTY_COCKTAIL
     cocktailLink: string = ""
+    cocktailImage: string = ""
 
     constructor() {}
 
@@ -17,5 +18,6 @@ export class CocktailCardComponent implements OnInit {
             " ",
             "-"
         ).toLowerCase()}`
+        this.cocktailImage = `/assets/img/1x1/${this.cocktail.Image}`
     }
 }

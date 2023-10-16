@@ -19,10 +19,11 @@ import { DOCUMENT } from "@angular/common"
     styleUrls: ["./cocktail-page.component.css"],
 })
 export class CocktailPageComponent implements OnInit, OnDestroy {
-    cocktail: Cocktail = EMPTY_COCKTAIL
-    private subscriptions: Subscription = new Subscription()
-    trustedVideoSrc: SafeResourceUrl
     private script: HTMLScriptElement
+    private subscriptions: Subscription = new Subscription()
+    cocktail: Cocktail = EMPTY_COCKTAIL
+    trustedVideoSrc: SafeResourceUrl
+    cocktailImage: string = ""
 
     constructor(
         private barRamonService: BarRamonService,
@@ -55,6 +56,7 @@ export class CocktailPageComponent implements OnInit, OnDestroy {
                         this.sanitizer.bypassSecurityTrustResourceUrl(
                             value.VideoEmbedUrl
                         )
+                    this.cocktailImage = `assets/img/1x1/${value.Image}`
                     this.updateHead(this.cocktail)
                 } else {
                     this.router.navigate(["/"])
@@ -79,7 +81,11 @@ export class CocktailPageComponent implements OnInit, OnDestroy {
             "@context": "https://schema.org",
             "@type": "Recipe",
             name: cocktail.RecipeName,
-            image: [cocktail.Image],
+            image: [
+                `/assets/img/1x1/${cocktail.Image}`,
+                `/assets/img/4x3/${cocktail.Image}`,
+                `/assets/img/16x9/${cocktail.Image}`,
+            ],
             author: {
                 "@type": "Person",
                 name: cocktail.Author,
