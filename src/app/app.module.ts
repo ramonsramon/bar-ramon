@@ -1,12 +1,15 @@
 import { NgModule, isDevMode } from "@angular/core"
 import { BrowserModule } from "@angular/platform-browser"
-
 import { AppRoutingModule } from "./app-routing.module"
 import { AppComponent } from "./app.component"
 import { HomePageComponent } from "./home-page/home-page.component"
 import { environment } from "src/environments/environment.development"
-import { initializeApp, provideFirebaseApp } from "@angular/fire/app"
-import { getFirestore, provideFirestore } from "@angular/fire/firestore"
+import { getApp, initializeApp, provideFirebaseApp } from "@angular/fire/app"
+import {
+    initializeFirestore,
+    persistentLocalCache,
+    provideFirestore,
+} from "@angular/fire/firestore"
 import { provideAnalytics, getAnalytics } from "@angular/fire/analytics"
 import { CocktailPageComponent } from "./cocktail-page/cocktail-page.component"
 import { BarRamonService } from "./bar-ramon.service"
@@ -39,7 +42,11 @@ import { ServiceWorkerModule } from "@angular/service-worker"
         BrowserModule,
         AppRoutingModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideFirestore(() => getFirestore()),
+        provideFirestore(() =>
+            initializeFirestore(getApp(), {
+                localCache: persistentLocalCache({}),
+            })
+        ),
         provideAnalytics(() => getAnalytics()),
         BrowserAnimationsModule,
         MatIconModule,
