@@ -43,9 +43,13 @@ import { ServiceWorkerModule } from "@angular/service-worker"
         AppRoutingModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideFirestore(() =>
-            initializeFirestore(getApp(), {
-                localCache: persistentLocalCache({}),
-            })
+            initializeFirestore(
+                getApp(),
+                {
+                    localCache: persistentLocalCache({}),
+                },
+                environment.databaseId
+            )
         ),
         provideAnalytics(() => getAnalytics()),
         BrowserAnimationsModule,

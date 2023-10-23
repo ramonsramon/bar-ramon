@@ -1,17 +1,21 @@
 {
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
-  "hosting": {
-    "source": ".",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "firestore": [
+        {
+            "database": "(default)",
+            "rules": "firestore.default.rules",
+            "indexes": "firestore.default.indexes.json"
+        },
+        {
+            "database": "test",
+            "rules": "firestore.test.rules",
+            "indexes": "firestore.test.indexes.json"
+        }
     ],
-    "frameworksBackend": {
-      "region": "us-central1"
+    "hosting": {
+        "source": ".",
+        "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+        "frameworksBackend": {
+            "region": "us-central1"
+        }
     }
-  }
 }
