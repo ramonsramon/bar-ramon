@@ -1,9 +1,8 @@
-import { Component, OnDestroy, OnInit, inject } from "@angular/core"
+import { Component, OnDestroy, OnInit } from "@angular/core"
 import { Observable } from "rxjs"
 import { Cocktail } from "../models/cocktail"
 import { BarRamonService } from "../bar-ramon.service"
 import { Meta } from "@angular/platform-browser"
-import { Analytics } from "@angular/fire/analytics"
 
 @Component({
     selector: "home-page",
@@ -12,7 +11,6 @@ import { Analytics } from "@angular/fire/analytics"
 })
 export class HomePageComponent implements OnInit, OnDestroy {
     cocktails$: Observable<Cocktail[]>
-    private analytics: Analytics = inject(Analytics)
 
     constructor(private barRamonService: BarRamonService, private meta: Meta) {
         this.cocktails$ = this.barRamonService.getCocktails()
