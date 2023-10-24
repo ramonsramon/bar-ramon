@@ -24,6 +24,7 @@ import { MatButtonModule } from "@angular/material/button"
 import { RecipeTimePipe } from "./recipe-time.pipe"
 import { NavbarComponent } from "./navbar/navbar.component"
 import { ServiceWorkerModule } from "@angular/service-worker"
+import { PagerComponent } from "./pager/pager.component"
 
 @NgModule({
     declarations: [
@@ -37,6 +38,7 @@ import { ServiceWorkerModule } from "@angular/service-worker"
         MoreInfoComponent,
         RecipeTimePipe,
         NavbarComponent,
+        PagerComponent,
     ],
     imports: [
         BrowserModule,

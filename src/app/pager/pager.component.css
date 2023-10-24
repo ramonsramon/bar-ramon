@@ -1,0 +1,13 @@
+.pager-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-button {
+    font-size: 1rem;
+}
+
+.selected {
+    background-color: var(--pink);
+}

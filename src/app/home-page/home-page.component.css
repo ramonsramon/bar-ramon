@@ -2,6 +2,11 @@
     color: var(--dark-grey);
 }
 
+pager {
+    display: block;
+    margin-top: 2rem;
+}
+
 @media (prefers-color-scheme: dark) {
     .title {
         color: var(--white);

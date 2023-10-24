@@ -1,0 +1,36 @@
+<div class="pager-container">
+    <button
+        mat-icon-button
+        aria-label="Start page button"
+        (click)="selectPage(1)"
+    >
+        <mat-icon>skip_previous</mat-icon>
+    </button>
+    <button
+        mat-icon-button
+        aria-label="previous page button"
+        (click)="prevPage()"
+    >
+        <mat-icon>navigate_before</mat-icon>
+    </button>
+    <button
+        *ngFor="let page of totalPages"
+        [ngClass]="{ selected: currentPage == page }"
+        class="page-button"
+        mat-icon-button
+        attr.aria-label="Select page {{ page }}"
+        (click)="selectPage(page)"
+    >
+        {{ page }}
+    </button>
+    <button mat-icon-button aria-label="next page button" (click)="nextPage()">
+        <mat-icon>navigate_next</mat-icon>
+    </button>
+    <button
+        mat-icon-button
+        aria-label="Last page button"
+        (click)="selectPage(totalPages.length)"
+    >
+        <mat-icon>skip_next</mat-icon>
+    </button>
+</div>
