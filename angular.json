@@ -101,7 +101,8 @@
                     "builder": "@angular/fire:deploy",
                     "options": {
                         "version": 2,
-                        "browserTarget": "bar-ramon:build:production"
+                        "browserTarget": "bar-ramon:build:production",
+                        "serverTarget": "bar-ramon:server:production"
                     }
                 },
                 "server": {
@@ -144,51 +145,6 @@
                         }
                     },
                     "defaultConfiguration": "development"
-                },
-                "prerender": {
-                    "builder": "@nguniversal/builders:prerender",
-                    "options": {
-                        "routes": [
-                            "/",
-                            "/cocktails/boston-sour",
-                            "/cocktails/classic-daiquiri",
-                            "/cocktails/clover-club",
-                            "/cocktails/fence-hopper",
-                            "/cocktails/hurricane",
-                            "/cocktails/la-louisiane",
-                            "/cocktails/lemon-drop",
-                            "/cocktails/manhattan",
-                            "/cocktails/margarita",
-                            "/cocktails/pink-lady",
-                            "/cocktails/pisco-sour",
-                            "/cocktails/rattle-skull",
-                            "/cocktails/rusty-nail",
-                            "/cocktails/white-negroni",
-                            "/cocktails/espresso-martini",
-                            "/cocktails/old-fashioned",
-                            "/cocktails/eggnog",
-                            "/cocktails/fish-house-punch",
-                            "/cocktails/boulevardier",
-                            "/cocktails/el-diablo",
-                            "/cocktails/littlest-rebel",
-                            "/cocktails/rolls-royce",
-                            "/cocktails/satan-whiskers",
-                            "/cocktails/siesta",
-                            "/cocktails/white-lady",
-                            "/cocktails/ford"
-                        ]
-                    },
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "bar-ramon:build:production",
-                            "serverTarget": "bar-ramon:server:production"
-                        },
-                        "development": {
-                            "browserTarget": "bar-ramon:build:development",
-                            "serverTarget": "bar-ramon:server:development"
-                        }
-                    },
-                    "defaultConfiguration": "production"
                 }
             }
         }
