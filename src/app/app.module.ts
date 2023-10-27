@@ -3,7 +3,7 @@ import { BrowserModule } from "@angular/platform-browser"
 import { AppRoutingModule } from "./app-routing.module"
 import { AppComponent } from "./app.component"
 import { HomePageComponent } from "./home-page/home-page.component"
-import { environment } from "src/environments/environment.development"
+import { environment } from "src/environments/environment"
 import { getApp, initializeApp, provideFirebaseApp } from "@angular/fire/app"
 import {
     initializeFirestore,
