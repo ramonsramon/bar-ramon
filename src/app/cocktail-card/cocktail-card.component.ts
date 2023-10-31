@@ -14,7 +14,7 @@ export class CocktailCardComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {
-        this.cocktailLink = `cocktails/${this.cocktail.RecipeName.replace(
+        this.cocktailLink = `cocktails/${this.cocktail.RecipeName.replaceAll(
             " ",
             "-"
         ).toLowerCase()}`
