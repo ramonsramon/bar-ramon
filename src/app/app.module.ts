@@ -1,5 +1,8 @@
 import { NgModule, isDevMode } from "@angular/core"
-import { BrowserModule } from "@angular/platform-browser"
+import {
+    BrowserModule,
+    provideClientHydration,
+} from "@angular/platform-browser"
 import { AppRoutingModule } from "./app-routing.module"
 import { AppComponent } from "./app.component"
 import { HomePageComponent } from "./home-page/home-page.component"
@@ -25,6 +28,7 @@ import { RecipeTimePipe } from "./recipe-time.pipe"
 import { NavbarComponent } from "./navbar/navbar.component"
 import { ServiceWorkerModule } from "@angular/service-worker"
 import { PagerComponent } from "./pager/pager.component"
+import { provideHttpClient, withFetch } from "@angular/common/http"
 
 @NgModule({
     declarations: [
@@ -41,8 +45,6 @@ import { PagerComponent } from "./pager/pager.component"
         PagerComponent,
     ],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideFirestore(() =>
             initializeFirestore(
@@ -54,6 +56,8 @@ import { PagerComponent } from "./pager/pager.component"
             )
         ),
         provideAnalytics(() => getAnalytics()),
+        BrowserModule,
+        AppRoutingModule,
         BrowserAnimationsModule,
         MatIconModule,
         MatButtonModule,
@@ -64,7 +68,11 @@ import { PagerComponent } from "./pager/pager.component"
             registrationStrategy: "registerWhenStable:30000",
         }),
     ],
-    providers: [BarRamonService],
+    providers: [
+        BarRamonService,
+        provideHttpClient(withFetch()),
+        provideClientHydration(),
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
