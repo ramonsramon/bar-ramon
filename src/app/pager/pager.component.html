@@ -13,8 +13,8 @@
     >
         <mat-icon>navigate_before</mat-icon>
     </button>
+    @for (page of totalPages; track page) {
     <button
-        *ngFor="let page of totalPages"
         [ngClass]="{ selected: currentPage == page }"
         class="page-button"
         mat-icon-button
@@ -23,6 +23,7 @@
     >
         {{ page }}
     </button>
+    }
     <button mat-icon-button aria-label="next page button" (click)="nextPage()">
         <mat-icon>navigate_next</mat-icon>
     </button>

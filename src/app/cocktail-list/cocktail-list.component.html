@@ -1,3 +1,5 @@
 <div class="cocktails">
-      <cocktail-card *ngFor="let cocktail of cocktails" [cocktail]="cocktail"></cocktail-card>
+    @for (cocktail of cocktails; track cocktail.RecipeName) {
+    <cocktail-card [cocktail]="cocktail"></cocktail-card>
+    }
 </div>

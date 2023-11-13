@@ -3,33 +3,34 @@
         <div class="container-grid">
             <div class="intro">
                 <h2>{{ cocktail.RecipeName }}</h2>
+                @if (cocktail.Image) {
                 <img
-                    *ngIf="cocktail.Image"
                     class="cocktail-photo"
                     [src]="cocktailImage"
                     [alt]="cocktail.ImageAlt"
                 />
+                }
             </div>
             <div class="info">
                 <h2>Ingredients</h2>
                 <ul class="ingredients-list">
-                    <li
-                        class="ingredients-list-item"
-                        *ngFor="let ingredient of cocktail.RecipeIngredient"
-                    >
+                    @for (ingredient of cocktail.RecipeIngredient; track
+                    ingredient) {
+                    <li class="ingredients-list-item">
                         <bubble>{{ ingredient }}</bubble>
                     </li>
+                    }
                 </ul>
                 <h2>Glass</h2>
                 <bubble>{{ cocktail.RecipeGlass }}</bubble>
                 <h2 class="instructions-heading">Instructions</h2>
                 <ol class="instructions-list">
-                    <li
-                        class="instructions-list-item"
-                        *ngFor="let instruction of cocktail.RecipeInstructions"
-                    >
+                    @for (instruction of cocktail.RecipeInstructions; track
+                    instruction.StepName) {
+                    <li class="instructions-list-item">
                         {{ instruction.StepDescription }}
                     </li>
+                    }
                 </ol>
                 <more-info
                     [rating]="cocktail.RatingValue"
@@ -41,6 +42,7 @@
                     [description]="cocktail.Description"
                 ></more-info>
             </div>
+            @if (cocktail.VideoWidth > 0) {
             <iframe
                 *ngIf="cocktail.VideoWidth > 0"
                 [width]="cocktail.VideoWidth"
@@ -51,6 +53,7 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen=""
             ></iframe>
+            }
         </div>
     </div>
 </div>

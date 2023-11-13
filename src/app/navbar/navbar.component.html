@@ -7,17 +7,17 @@
             <mat-icon>menu</mat-icon>
         </button>
         <div class="nav-desktop-menu">
-            <ng-container *ngFor="let navLink of navLinks">
-                <a [routerLink]="navLink.path">{{ navLink.title }}</a>
-            </ng-container>
+            @for (navLink of navLinks; track navLink.title) {
+            <a [routerLink]="navLink.path">{{ navLink.title }}</a>
+            }
         </div>
     </div>
     <div class="nav-popout" [ngClass]="{ hide: isHidden }">
         <div class="nav-popout-links">
-            <ng-container *ngFor="let navLink of navLinks">
-                <a [routerLink]="navLink.path">{{ navLink.title }}</a>
-                <hr />
-            </ng-container>
+            @for (navLink of navLinks; track navLink.title) {
+            <a [routerLink]="navLink.path">{{ navLink.title }}</a>
+            <hr />
+            }
         </div>
     </div>
 </div>
