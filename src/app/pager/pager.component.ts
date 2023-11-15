@@ -1,22 +1,30 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core"
+import {
+    Component,
+    EventEmitter,
+    Input,
+    OnDestroy,
+    OnInit,
+    Output,
+} from "@angular/core"
 import { Cocktail } from "../models/cocktail"
-import { Observable } from "rxjs"
+import { Observable, Subscription } from "rxjs"
 
 @Component({
     selector: "pager",
     templateUrl: "./pager.component.html",
     styleUrls: ["./pager.component.css"],
 })
-export class PagerComponent implements OnInit {
+export class PagerComponent implements OnInit, OnDestroy {
     @Input() cocktails$!: Observable<Cocktail[]>
     @Input() pageSize = 10
     @Output() cocktailPage = new EventEmitter<Cocktail[]>()
     cocktails: Cocktail[] = []
     totalPages: number[] = []
     currentPage = 1
+    subscriptions: Subscription = new Subscription()
 
     ngOnInit(): void {
-        this.cocktails$.subscribe((cocktails) => {
+        const cocktailSub = this.cocktails$.subscribe((cocktails) => {
             this.cocktails = cocktails
             let lastPage = Math.ceil(cocktails.length / this.pageSize)
             this.totalPages = []
@@ -30,6 +38,12 @@ export class PagerComponent implements OnInit {
             })
             this.cocktailPage.emit(shown)
         })
+
+        this.subscriptions.add(cocktailSub)
+    }
+
+    ngOnDestroy(): void {
+        this.subscriptions.unsubscribe()
     }
 
     nextPage() {

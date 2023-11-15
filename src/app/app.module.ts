@@ -8,11 +8,7 @@ import { AppComponent } from "./app.component"
 import { HomePageComponent } from "./home-page/home-page.component"
 import { environment } from "src/environments/environment"
 import { getApp, initializeApp, provideFirebaseApp } from "@angular/fire/app"
-import {
-    initializeFirestore,
-    persistentLocalCache,
-    provideFirestore,
-} from "@angular/fire/firestore"
+import { getFirestore, provideFirestore } from "@angular/fire/firestore"
 import { provideAnalytics, getAnalytics } from "@angular/fire/analytics"
 import { CocktailPageComponent } from "./cocktail-page/cocktail-page.component"
 import { BarRamonService } from "./bar-ramon.service"
@@ -24,11 +20,13 @@ import { MatIconModule } from "@angular/material/icon"
 import { RatingComponent } from "./rating/rating.component"
 import { MoreInfoComponent } from "./more-info/more-info.component"
 import { MatButtonModule } from "@angular/material/button"
+import { ReactiveFormsModule } from "@angular/forms"
 import { RecipeTimePipe } from "./recipe-time.pipe"
 import { NavbarComponent } from "./navbar/navbar.component"
 import { ServiceWorkerModule } from "@angular/service-worker"
 import { PagerComponent } from "./pager/pager.component"
 import { provideHttpClient, withFetch } from "@angular/common/http"
+import { FooterComponent } from "./footer/footer.component"
 
 @NgModule({
     declarations: [
@@ -43,22 +41,16 @@ import { provideHttpClient, withFetch } from "@angular/common/http"
         RecipeTimePipe,
         NavbarComponent,
         PagerComponent,
+        FooterComponent,
     ],
     imports: [
         provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideFirestore(() =>
-            initializeFirestore(
-                getApp(),
-                {
-                    localCache: persistentLocalCache({}),
-                },
-                environment.databaseId
-            )
-        ),
+        provideFirestore(() => getFirestore(getApp(), environment.databaseId)),
         provideAnalytics(() => getAnalytics()),
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        ReactiveFormsModule,
         MatIconModule,
         MatButtonModule,
         ServiceWorkerModule.register("ngsw-worker.js", {

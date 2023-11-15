@@ -1,0 +1,93 @@
+form {
+    display: inline-block;
+}
+
+h3 {
+    font-weight: var(--fw-bold);
+    margin: 0;
+}
+
+.footer-container {
+    padding: 1.5rem;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+        0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+.footer-logo {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-logo > h2 {
+    margin: 0;
+}
+
+.footer-references > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-references > a:first-child {
+    margin-right: 0.5rem;
+}
+
+.email-input {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--light-grey-shade-medium);
+    border-radius: 2rem;
+    flex-basis: fit-content;
+}
+
+.email-input-prefix {
+    margin-right: 0.5rem;
+}
+
+.email-input-field {
+    margin-right: 0.5rem;
+    border: none;
+    background-color: transparent;
+}
+
+.email-input-field:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+.email-input-suffix {
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--pink);
+    color: var(--white);
+}
+
+.copyright {
+    text-align: center;
+}
+
+/* Tablet Breakpoint */
+@media (min-width: 834px) {
+    .footer-info-subscribe {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .footer-container {
+        background-color: var(--light-grey);
+    }
+
+    .email-input {
+        background-color: var(--light-grey-shade-dark);
+    }
+
+    .email-input-field,
+    .email-input-field::placeholder,
+    .email-input-prefix {
+        color: var(--light-grey-shade-light);
+    }
+}

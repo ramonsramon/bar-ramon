@@ -8,6 +8,9 @@ import {
 } from "@angular/fire/firestore"
 import { Observable } from "rxjs"
 import { Cocktail } from "./models/cocktail"
+import { HttpClient, HttpResponse } from "@angular/common/http"
+import { Contact } from "./models/contact"
+import { environment } from "src/environments/environment"
 
 @Injectable({
     providedIn: "root",
@@ -15,7 +18,7 @@ import { Cocktail } from "./models/cocktail"
 export class BarRamonService {
     cocktailPath = "cocktails"
 
-    constructor(private firestore: Firestore) {}
+    constructor(private firestore: Firestore, private http: HttpClient) {}
 
     getCocktails(): Observable<Cocktail[]> {
         const cocktailsCollection = collection(
@@ -31,5 +34,16 @@ export class BarRamonService {
             `${this.cocktailPath}/${id}`
         )
         return docData(cocktailDocument) as Observable<Cocktail>
+    }
+
+    addSubscriber(contact: Contact): Observable<HttpResponse<string>> {
+        return this.http.post(
+            `${environment.emailServiceUrl}/contact`,
+            contact,
+            {
+                responseType: "text",
+                observe: "response",
+            }
+        )
     }
 }
