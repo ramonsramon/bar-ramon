@@ -17,13 +17,29 @@ import {
     provideRouter,
     withEnabledBlockingInitialNavigation,
 } from "@angular/router"
-import { HomePageComponent } from "./app/home-page/home-page.component"
-import { CocktailPageComponent } from "./app/cocktail-page/cocktail-page.component"
 
 const routes: Routes = [
-    { component: HomePageComponent, path: "" },
-    { component: CocktailPageComponent, path: "cocktails/:id" },
-    { component: HomePageComponent, path: "**" },
+    {
+        path: "",
+        loadComponent: () =>
+            import("./app/home-page/home-page.component").then(
+                (mod) => mod.HomePageComponent
+            ),
+    },
+    {
+        path: "cocktails/:id",
+        loadComponent: () =>
+            import("./app/cocktail-page/cocktail-page.component").then(
+                (mod) => mod.CocktailPageComponent
+            ),
+    },
+    {
+        path: "**",
+        loadComponent: () =>
+            import("./app/home-page/home-page.component").then(
+                (mod) => mod.HomePageComponent
+            ),
+    },
 ]
 
 export default () =>

@@ -8,11 +8,12 @@ import {
 import { ContactForm } from "../models/contact"
 import { BarRamonService } from "../bar-ramon.service"
 import { MatIconModule } from "@angular/material/icon"
+import { RouterLink } from "@angular/router"
 
 @Component({
     selector: "footer",
     standalone: true,
-    imports: [MatIconModule, ReactiveFormsModule],
+    imports: [MatIconModule, ReactiveFormsModule, RouterLink],
     templateUrl: "./footer.component.html",
     styleUrl: "./footer.component.css",
 })
