@@ -44,7 +44,6 @@
             </div>
             @if (cocktail.VideoWidth > 0) {
             <iframe
-                *ngIf="cocktail.VideoWidth > 0"
                 [width]="cocktail.VideoWidth"
                 [height]="cocktail.VideoHeight"
                 [src]="trustedVideoSrc"

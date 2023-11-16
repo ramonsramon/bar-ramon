@@ -4,9 +4,13 @@ import { Cocktail } from "../models/cocktail"
 import { BarRamonService } from "../bar-ramon.service"
 import { Meta } from "@angular/platform-browser"
 import { DOCUMENT } from "@angular/common"
+import { CocktailListComponent } from "../cocktail-list/cocktail-list.component"
+import { PagerComponent } from "../pager/pager.component"
 
 @Component({
     selector: "home-page",
+    standalone: true,
+    imports: [CocktailListComponent, PagerComponent],
     templateUrl: "./home-page.component.html",
     styleUrls: ["./home-page.component.css"],
 })

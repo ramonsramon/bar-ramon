@@ -1,11 +1,15 @@
 import { Component, Input, OnDestroy, OnInit } from "@angular/core"
 import { NavLink } from "../models/nav-link"
-import { NavigationEnd, Router } from "@angular/router"
+import { NavigationEnd, Router, RouterLink } from "@angular/router"
 import { filter } from "rxjs/operators"
 import { Subscription } from "rxjs"
+import { MatIconModule } from "@angular/material/icon"
+import { NgClass } from "@angular/common"
 
 @Component({
     selector: "navbar",
+    standalone: true,
+    imports: [MatIconModule, RouterLink, NgClass],
     templateUrl: "./navbar.component.html",
     styleUrls: ["./navbar.component.css"],
 })

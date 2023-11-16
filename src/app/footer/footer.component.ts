@@ -1,11 +1,18 @@
 import { Component } from "@angular/core"
-import { FormControl, FormGroup, Validators } from "@angular/forms"
+import {
+    FormControl,
+    FormGroup,
+    ReactiveFormsModule,
+    Validators,
+} from "@angular/forms"
 import { ContactForm } from "../models/contact"
 import { BarRamonService } from "../bar-ramon.service"
+import { MatIconModule } from "@angular/material/icon"
 
 @Component({
     selector: "footer",
-    standalone: false,
+    standalone: true,
+    imports: [MatIconModule, ReactiveFormsModule],
     templateUrl: "./footer.component.html",
     styleUrl: "./footer.component.css",
 })

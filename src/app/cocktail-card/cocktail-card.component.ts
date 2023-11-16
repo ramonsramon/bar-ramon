@@ -1,8 +1,12 @@
 import { Component, Input, OnInit } from "@angular/core"
 import { Cocktail, EMPTY_COCKTAIL } from "../models/cocktail"
+import { BubbleComponent } from "../bubble/bubble.component"
+import { RouterLink } from "@angular/router"
 
 @Component({
     selector: "cocktail-card",
+    standalone: true,
+    imports: [BubbleComponent, RouterLink],
     templateUrl: "./cocktail-card.component.html",
     styleUrls: ["./cocktail-card.component.css"],
 })

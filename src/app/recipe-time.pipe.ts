@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from "@angular/core"
 
 @Pipe({
     name: "recipeTime",
+    standalone: true,
 })
 export class RecipeTimePipe implements PipeTransform {
     transform(value: string): string {

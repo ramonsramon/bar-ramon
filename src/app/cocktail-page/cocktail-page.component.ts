@@ -12,9 +12,13 @@ import { Subscription, of } from "rxjs"
 import { Cocktail, EMPTY_COCKTAIL } from "../models/cocktail"
 import { Recipe } from "../models/recipe"
 import { DOCUMENT } from "@angular/common"
+import { BubbleComponent } from "../bubble/bubble.component"
+import { MoreInfoComponent } from "../more-info/more-info.component"
 
 @Component({
     selector: "cocktail-page",
+    standalone: true,
+    imports: [BubbleComponent, MoreInfoComponent],
     templateUrl: "./cocktail-page.component.html",
     styleUrls: ["./cocktail-page.component.css"],
 })

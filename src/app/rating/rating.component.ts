@@ -1,7 +1,10 @@
 import { Component, Input, OnInit } from "@angular/core"
+import { MatIconModule } from "@angular/material/icon"
 
 @Component({
     selector: "rating",
+    standalone: true,
+    imports: [MatIconModule],
     templateUrl: "./rating.component.html",
     styleUrls: ["./rating.component.css"],
 })

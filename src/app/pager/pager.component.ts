@@ -8,9 +8,14 @@ import {
 } from "@angular/core"
 import { Cocktail } from "../models/cocktail"
 import { Observable, Subscription } from "rxjs"
+import { MatIconModule } from "@angular/material/icon"
+import { NgClass } from "@angular/common"
+import { MatButtonModule } from "@angular/material/button"
 
 @Component({
     selector: "pager",
+    standalone: true,
+    imports: [MatIconModule, NgClass, MatButtonModule],
     templateUrl: "./pager.component.html",
     styleUrls: ["./pager.component.css"],
 })
