@@ -13,7 +13,7 @@
     >
         <mat-icon>navigate_before</mat-icon>
     </button>
-    @for (page of totalPages; track page) {
+    @for (page of totalPages(); track page) {
     <button
         [ngClass]="{ selected: currentPage == page }"
         class="page-button"
@@ -30,7 +30,7 @@
     <button
         mat-icon-button
         aria-label="Last page button"
-        (click)="selectPage(totalPages.length)"
+        (click)="selectPage(totalPages().length)"
     >
         <mat-icon>skip_next</mat-icon>
     </button>

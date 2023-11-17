@@ -1,8 +1,17 @@
 <div class="container mw-1000">
-    <h2 class="title">Explore All Cocktails</h2>
-    <cocktail-list [cocktails]="shownCocktails"></cocktail-list>
-    <pager
-        [cocktails$]="totalCocktails$"
-        (cocktailPage)="updateShown($event)"
-    ></pager>
+    <div class="all-cocktail-heading">
+        <h2 class="title">Explore All Cocktails</h2>
+        <div class="searchField">
+            <mat-icon>search</mat-icon>
+            <input
+                type="text"
+                class="searchFieldInput"
+                placeholder="Search Cocktails"
+                [(ngModel)]="searchValue"
+                (keyup)="searchCocktails()"
+            />
+        </div>
+    </div>
+    <cocktail-list [cocktails]="cocktails()"></cocktail-list>
+    <pager></pager>
 </div>

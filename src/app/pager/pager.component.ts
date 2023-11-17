@@ -1,16 +1,8 @@
-import {
-    Component,
-    EventEmitter,
-    Input,
-    OnDestroy,
-    OnInit,
-    Output,
-} from "@angular/core"
-import { Cocktail } from "../models/cocktail"
-import { Observable, Subscription } from "rxjs"
+import { Component, Inject, OnInit, Signal, computed } from "@angular/core"
 import { MatIconModule } from "@angular/material/icon"
-import { NgClass } from "@angular/common"
+import { DOCUMENT, NgClass } from "@angular/common"
 import { MatButtonModule } from "@angular/material/button"
+import { BarRamonService } from "../bar-ramon.service"
 
 @Component({
     selector: "pager",
@@ -19,40 +11,31 @@ import { MatButtonModule } from "@angular/material/button"
     templateUrl: "./pager.component.html",
     styleUrls: ["./pager.component.css"],
 })
-export class PagerComponent implements OnInit, OnDestroy {
-    @Input() cocktails$!: Observable<Cocktail[]>
-    @Input() pageSize = 10
-    @Output() cocktailPage = new EventEmitter<Cocktail[]>()
-    cocktails: Cocktail[] = []
-    totalPages: number[] = []
+export class PagerComponent implements OnInit {
     currentPage = 1
-    subscriptions: Subscription = new Subscription()
+    pageSize = 10
+    totalPages: Signal<number[]> = computed(() => {
+        let lastPage = Math.ceil(
+            this.barRamonService.totalCocktails().length / this.pageSize
+        )
+        let pages = []
+        for (let i = 1; i <= lastPage; i++) {
+            pages.push(i)
+        }
+        return pages.sort()
+    })
+
+    constructor(
+        private barRamonService: BarRamonService,
+        @Inject(DOCUMENT) private _document: Document
+    ) {}
 
     ngOnInit(): void {
-        const cocktailSub = this.cocktails$.subscribe((cocktails) => {
-            this.cocktails = cocktails
-            let lastPage = Math.ceil(cocktails.length / this.pageSize)
-            this.totalPages = []
-            while (lastPage > 0) {
-                this.totalPages.push(lastPage)
-                lastPage--
-            }
-            this.totalPages.sort()
-            let shown = cocktails.filter((value, i) => {
-                return i < this.pageSize
-            })
-            this.cocktailPage.emit(shown)
-        })
-
-        this.subscriptions.add(cocktailSub)
-    }
-
-    ngOnDestroy(): void {
-        this.subscriptions.unsubscribe()
+        this.selectPage(1)
     }
 
     nextPage() {
-        if (this.currentPage < this.totalPages.length) {
+        if (this.currentPage < this.totalPages().length) {
             this.currentPage++
             this.pageChange()
         }
@@ -71,7 +54,7 @@ export class PagerComponent implements OnInit, OnDestroy {
     }
 
     pageChange() {
-        let shown = this.cocktails.filter((value, i) => {
+        this.barRamonService.updateFilter((_, i) => {
             if (this.currentPage === 1) {
                 return i >= 0 && i < this.pageSize
             } else {
@@ -81,6 +64,6 @@ export class PagerComponent implements OnInit, OnDestroy {
                 )
             }
         })
-        this.cocktailPage.emit(shown)
+        this._document.defaultView?.scrollTo(0, 0)
     }
 }

@@ -1,4 +1,10 @@
-import { Injectable } from "@angular/core"
+import {
+    Injectable,
+    Signal,
+    WritableSignal,
+    computed,
+    signal,
+} from "@angular/core"
 import {
     Firestore,
     collectionData,
@@ -17,15 +23,33 @@ import { environment } from "src/environments/environment"
 })
 export class BarRamonService {
     cocktailPath = "cocktails"
+    totalCocktails: WritableSignal<Cocktail[]> = signal([])
+    filterFunction: WritableSignal<
+        (value: Cocktail, index: number, array: Cocktail[]) => boolean
+    > = signal(() => {
+        return true
+    })
+    filteredCocktails: Signal<Cocktail[]> = computed(() =>
+        this.totalCocktails().filter((value, index, array) =>
+            this.filterFunction()(value, index, array)
+        )
+    )
 
     constructor(private firestore: Firestore, private http: HttpClient) {}
 
-    getCocktails(): Observable<Cocktail[]> {
+    getCocktails(): Signal<Cocktail[]> {
         const cocktailsCollection = collection(
             this.firestore,
             this.cocktailPath
         )
-        return collectionData(cocktailsCollection) as Observable<Cocktail[]>
+        const cocktails = collectionData(cocktailsCollection) as Observable<
+            Cocktail[]
+        >
+        cocktails.subscribe((cocktailList) => {
+            this.totalCocktails.set(cocktailList)
+        })
+
+        return this.filteredCocktails
     }
 
     getCocktail(id: string): Observable<Cocktail> {
@@ -34,6 +58,16 @@ export class BarRamonService {
             `${this.cocktailPath}/${id}`
         )
         return docData(cocktailDocument) as Observable<Cocktail>
+    }
+
+    updateFilter(
+        filterFunc: (
+            value: Cocktail,
+            index: number,
+            array: Cocktail[]
+        ) => boolean
+    ) {
+        this.filterFunction.set(filterFunc)
     }
 
     addSubscriber(contact: Contact): Observable<HttpResponse<string>> {

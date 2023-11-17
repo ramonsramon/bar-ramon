@@ -1,32 +1,32 @@
-import { Component, Inject, OnDestroy, OnInit } from "@angular/core"
-import { Observable } from "rxjs"
+import { Component, OnDestroy, OnInit, Signal } from "@angular/core"
 import { Cocktail } from "../models/cocktail"
 import { BarRamonService } from "../bar-ramon.service"
 import { Meta } from "@angular/platform-browser"
-import { DOCUMENT } from "@angular/common"
 import { CocktailListComponent } from "../cocktail-list/cocktail-list.component"
 import { PagerComponent } from "../pager/pager.component"
+import { FormsModule } from "@angular/forms"
+import { MatIconModule } from "@angular/material/icon"
 
 @Component({
     selector: "home-page",
     standalone: true,
-    imports: [CocktailListComponent, PagerComponent],
+    imports: [
+        CocktailListComponent,
+        PagerComponent,
+        FormsModule,
+        MatIconModule,
+    ],
     templateUrl: "./home-page.component.html",
     styleUrls: ["./home-page.component.css"],
 })
 export class HomePageComponent implements OnInit, OnDestroy {
-    totalCocktails$: Observable<Cocktail[]>
-    shownCocktails: Cocktail[] = []
+    cocktails: Signal<Cocktail[]> = this.barRamonService.getCocktails()
+    searchValue: string = ""
+    pageSize: number = 10
 
-    constructor(
-        private barRamonService: BarRamonService,
-        private meta: Meta,
-        @Inject(DOCUMENT) private _document: Document
-    ) {
-        this.totalCocktails$ = this.barRamonService.getCocktails()
-    }
+    constructor(private barRamonService: BarRamonService, private meta: Meta) {}
 
-    async ngOnInit(): Promise<void> {
+    ngOnInit(): void {
         this.meta.addTag({
             name: "description",
             content: "A collection of The Ramons favorite cocktails",
@@ -37,8 +37,20 @@ export class HomePageComponent implements OnInit, OnDestroy {
         this.meta.removeTag("name=description")
     }
 
-    updateShown(cocktails: Cocktail[]) {
-        this.shownCocktails = cocktails
-        this._document.defaultView?.scrollTo(0, 0)
+    searchCocktails() {
+        if (this.searchValue === "") {
+            this.barRamonService.updateFilter((_, i) => i < this.pageSize)
+        } else {
+            this.barRamonService.updateFilter((value) => {
+                return (
+                    value.RecipeName.toLocaleLowerCase().includes(
+                        this.searchValue.toLocaleLowerCase()
+                    ) ||
+                    value.PrimarySpirit.toLocaleLowerCase().includes(
+                        this.searchValue.toLocaleLowerCase()
+                    )
+                )
+            })
+        }
     }
 }
