@@ -1,8 +1,17 @@
-import { Component, Inject, OnInit, Signal, computed } from "@angular/core"
+import {
+    Component,
+    EventEmitter,
+    Inject,
+    OnInit,
+    Output,
+    Signal,
+    computed,
+} from "@angular/core"
 import { MatIconModule } from "@angular/material/icon"
 import { DOCUMENT, NgClass } from "@angular/common"
 import { MatButtonModule } from "@angular/material/button"
 import { BarRamonService } from "../bar-ramon.service"
+import { Cursor } from "../models/cursor"
 
 @Component({
     selector: "pager",
@@ -16,14 +25,16 @@ export class PagerComponent implements OnInit {
     pageSize = 10
     totalPages: Signal<number[]> = computed(() => {
         let lastPage = Math.ceil(
-            this.barRamonService.totalCocktails().length / this.pageSize
+            this.barRamonService.filteredCocktails().length / this.pageSize
         )
         let pages = []
         for (let i = 1; i <= lastPage; i++) {
             pages.push(i)
         }
+        this.currentPage = 1
         return pages.sort()
     })
+    @Output() cursor: EventEmitter<Cursor> = new EventEmitter()
 
     constructor(
         private barRamonService: BarRamonService,
@@ -54,15 +65,9 @@ export class PagerComponent implements OnInit {
     }
 
     pageChange() {
-        this.barRamonService.updateFilter((_, i) => {
-            if (this.currentPage === 1) {
-                return i >= 0 && i < this.pageSize
-            } else {
-                return (
-                    i >= this.pageSize * (this.currentPage - 1) &&
-                    i < this.pageSize * this.currentPage
-                )
-            }
+        this.cursor.emit({
+            start: (this.currentPage - 1) * this.pageSize,
+            end: this.currentPage * this.pageSize,
         })
         this._document.defaultView?.scrollTo(0, 0)
     }

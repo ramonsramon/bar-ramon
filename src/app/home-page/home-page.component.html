@@ -12,6 +12,8 @@
             />
         </div>
     </div>
-    <cocktail-list [cocktails]="cocktails()"></cocktail-list>
-    <pager></pager>
+    <cocktail-list
+        [cocktails]="cocktails().slice(cursor.start, cursor.end)"
+    ></cocktail-list>
+    <pager (cursor)="updateCursor($event)"></pager>
 </div>

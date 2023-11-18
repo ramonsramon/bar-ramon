@@ -6,6 +6,7 @@ import { CocktailListComponent } from "../cocktail-list/cocktail-list.component"
 import { PagerComponent } from "../pager/pager.component"
 import { FormsModule } from "@angular/forms"
 import { MatIconModule } from "@angular/material/icon"
+import { Cursor } from "../models/cursor"
 
 @Component({
     selector: "home-page",
@@ -22,7 +23,7 @@ import { MatIconModule } from "@angular/material/icon"
 export class HomePageComponent implements OnInit, OnDestroy {
     cocktails: Signal<Cocktail[]> = this.barRamonService.getCocktails()
     searchValue: string = ""
-    pageSize: number = 10
+    cursor: Cursor = { start: 0, end: 10 }
 
     constructor(private barRamonService: BarRamonService, private meta: Meta) {}
 
@@ -31,6 +32,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
             name: "description",
             content: "A collection of The Ramons favorite cocktails",
         })
+        this.searchCocktails()
     }
 
     ngOnDestroy(): void {
@@ -39,7 +41,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
     searchCocktails() {
         if (this.searchValue === "") {
-            this.barRamonService.updateFilter((_, i) => i < this.pageSize)
+            this.barRamonService.updateFilter(() => true)
         } else {
             this.barRamonService.updateFilter((value) => {
                 return (
@@ -52,5 +54,10 @@ export class HomePageComponent implements OnInit, OnDestroy {
                 )
             })
         }
+        this.cursor = { start: 0, end: 10 }
+    }
+
+    updateCursor(e: Cursor) {
+        this.cursor = e
     }
 }
