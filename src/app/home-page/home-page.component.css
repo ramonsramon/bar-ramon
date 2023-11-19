@@ -21,6 +21,15 @@
     outline: none;
     background-color: transparent;
 }
+
+.searchFieldClear {
+    margin-left: auto;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
 pager {
     display: block;
     margin-top: 2rem;

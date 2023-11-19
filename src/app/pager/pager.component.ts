@@ -2,6 +2,7 @@ import {
     Component,
     EventEmitter,
     Inject,
+    OnDestroy,
     OnInit,
     Output,
     Signal,
@@ -12,6 +13,8 @@ import { DOCUMENT, NgClass } from "@angular/common"
 import { MatButtonModule } from "@angular/material/button"
 import { BarRamonService } from "../bar-ramon.service"
 import { Cursor } from "../models/cursor"
+import { ActivatedRoute } from "@angular/router"
+import { Subscription } from "rxjs"
 
 @Component({
     selector: "pager",
@@ -20,7 +23,7 @@ import { Cursor } from "../models/cursor"
     templateUrl: "./pager.component.html",
     styleUrls: ["./pager.component.css"],
 })
-export class PagerComponent implements OnInit {
+export class PagerComponent implements OnInit, OnDestroy {
     currentPage = 1
     pageSize = 10
     totalPages: Signal<number[]> = computed(() => {
@@ -31,18 +34,33 @@ export class PagerComponent implements OnInit {
         for (let i = 1; i <= lastPage; i++) {
             pages.push(i)
         }
-        this.currentPage = 1
         return pages.sort()
     })
+    subscriptions: Subscription = new Subscription()
     @Output() cursor: EventEmitter<Cursor> = new EventEmitter()
 
     constructor(
         private barRamonService: BarRamonService,
-        @Inject(DOCUMENT) private _document: Document
+        @Inject(DOCUMENT) private _document: Document,
+        private route: ActivatedRoute
     ) {}
 
     ngOnInit(): void {
-        this.selectPage(1)
+        const queryParamSub = this.route.queryParamMap.subscribe((params) => {
+            const cursorEndValue = params.get("end")
+            console.log(cursorEndValue)
+            if (cursorEndValue) {
+                const page = Number(cursorEndValue) / this.pageSize
+                this.selectPage(page)
+            } else {
+                this.selectPage(1)
+            }
+        })
+        this.subscriptions.add(queryParamSub)
+    }
+
+    ngOnDestroy(): void {
+        this.subscriptions.unsubscribe()
     }
 
     nextPage() {

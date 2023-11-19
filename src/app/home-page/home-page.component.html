@@ -10,6 +10,11 @@
                 [(ngModel)]="searchValue"
                 (keyup)="searchCocktails()"
             />
+            @if (this.searchValue.length > 0) {
+            <button class="searchFieldClear" (click)="clear()">
+                <mat-icon>close</mat-icon>
+            </button>
+            }
         </div>
     </div>
     <cocktail-list
