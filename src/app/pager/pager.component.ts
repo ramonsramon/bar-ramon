@@ -48,7 +48,6 @@ export class PagerComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         const queryParamSub = this.route.queryParamMap.subscribe((params) => {
             const cursorEndValue = params.get("end")
-            console.log(cursorEndValue)
             if (cursorEndValue) {
                 const page = Number(cursorEndValue) / this.pageSize
                 this.selectPage(page)
