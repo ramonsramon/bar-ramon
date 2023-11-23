@@ -10,6 +10,12 @@ import { Cursor } from "../models/cursor"
 import { ActivatedRoute, Router } from "@angular/router"
 import { first } from "rxjs"
 
+type BarRamonParams = {
+    search?: string
+    start: number
+    end: number
+}
+
 @Component({
     selector: "home-page",
     standalone: true,
@@ -23,9 +29,10 @@ import { first } from "rxjs"
     styleUrls: ["./home-page.component.css"],
 })
 export class HomePageComponent implements OnInit, OnDestroy {
+    readonly baseCursor: Cursor = { start: 0, end: 10 }
     cocktails: Signal<Cocktail[]> = this.barRamonService.getCocktails()
     searchValue: string = ""
-    cursor: Cursor = { start: 0, end: 10 }
+    cursor: Cursor = this.baseCursor
 
     constructor(
         private barRamonService: BarRamonService,
@@ -41,20 +48,10 @@ export class HomePageComponent implements OnInit, OnDestroy {
         })
         this.route.queryParamMap.pipe(first()).subscribe((params) => {
             const searchParamValue = params.get("search")
-            const cursorStartValue = params.get("start")
-            const cursorEndValue = params.get("end")
             if (searchParamValue) {
                 this.searchValue = searchParamValue
             }
-            if (cursorStartValue && cursorEndValue) {
-                this.cursor = {
-                    start: Number(cursorStartValue),
-                    end: Number(cursorEndValue),
-                }
-            } else {
-                this.cursor = { start: 0, end: 10 }
-            }
-            this.searchCocktails()
+            this.searchCocktails(this.cursor)
         })
     }
 
@@ -62,63 +59,35 @@ export class HomePageComponent implements OnInit, OnDestroy {
         this.meta.removeTag("name=description")
     }
 
-    searchCocktails() {
-        this.cursor = { start: 0, end: 10 }
-        if (this.searchValue === "") {
-            this.router.navigate([], {
-                relativeTo: this.route,
-                queryParams: {
-                    start: this.cursor.start,
-                    end: this.cursor.end,
-                },
-            })
-            this.barRamonService.updateFilter(() => true)
-        } else {
-            this.router.navigate([], {
-                relativeTo: this.route,
-                queryParams: {
-                    search: this.searchValue.toLocaleLowerCase(),
-                    start: this.cursor.start,
-                    end: this.cursor.end,
-                },
-            })
-            this.barRamonService.updateFilter((value) => {
+    searchCocktails(cursor: Cursor) {
+        this.cursor = cursor
+        let queryParams: BarRamonParams = {
+            start: this.cursor.start,
+            end: this.cursor.end,
+        }
+        let filterFunc = (value: Cocktail) => true
+        if (this.searchValue.length > 0) {
+            queryParams.search = this.searchValue.toLowerCase()
+            filterFunc = (value: Cocktail) => {
                 return (
-                    value.RecipeName.toLocaleLowerCase().includes(
-                        this.searchValue.toLocaleLowerCase()
+                    value.RecipeName.toLowerCase().includes(
+                        this.searchValue.toLowerCase()
                     ) ||
-                    value.PrimarySpirit.toLocaleLowerCase().includes(
-                        this.searchValue.toLocaleLowerCase()
+                    value.PrimarySpirit.toLowerCase().includes(
+                        this.searchValue.toLowerCase()
                     )
                 )
-            })
+            }
         }
-    }
-
-    updateCursor(e: Cursor) {
-        this.cursor = e
-        if (this.searchValue === "") {
-            this.router.navigate([], {
-                relativeTo: this.route,
-                queryParams: {
-                    start: this.cursor.start,
-                    end: this.cursor.end,
-                },
-            })
-        } else {
-            this.router.navigate([], {
-                relativeTo: this.route,
-                queryParams: {
-                    search: this.searchValue.toLocaleLowerCase(),
-                    start: this.cursor.start,
-                    end: this.cursor.end,
-                },
-            })
-        }
+        this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: queryParams,
+        })
+        this.barRamonService.updateFilter(filterFunc)
     }
 
     clear() {
         this.searchValue = ""
-        this.searchCocktails()
+        this.searchCocktails(this.baseCursor)
     }
 }

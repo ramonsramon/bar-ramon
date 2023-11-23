@@ -8,7 +8,7 @@
                 class="searchFieldInput"
                 placeholder="Search Cocktails"
                 [(ngModel)]="searchValue"
-                (keyup)="searchCocktails()"
+                (keyup)="searchCocktails(baseCursor)"
             />
             @if (this.searchValue.length > 0) {
             <button class="searchFieldClear" (click)="clear()">
@@ -20,5 +20,5 @@
     <cocktail-list
         [cocktails]="cocktails().slice(cursor.start, cursor.end)"
     ></cocktail-list>
-    <pager (cursor)="updateCursor($event)"></pager>
+    <pager (cursor)="searchCocktails($event)"></pager>
 </div>

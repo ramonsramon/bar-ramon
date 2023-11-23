@@ -37,6 +37,13 @@ export class BarRamonService {
 
     constructor(private firestore: Firestore, private http: HttpClient) {}
 
+    /**
+     * Gets a Computed Signal of filtered cocktails that is dependent on totalCocktails and the filter function
+     *
+     * The default filter function is the same as the totalCocktails
+     *
+     * @return A Computed Signal of a Cocktail array
+     **/
     getCocktails(): Signal<Cocktail[]> {
         const cocktailsCollection = collection(
             this.firestore,
@@ -52,6 +59,11 @@ export class BarRamonService {
         return this.filteredCocktails
     }
 
+    /**
+     * Gets an observable of a single Cocktail
+     *
+     * @return An Observable that contains a single Cocktail
+     **/
     getCocktail(id: string): Observable<Cocktail> {
         const cocktailDocument = doc(
             this.firestore,
@@ -60,6 +72,13 @@ export class BarRamonService {
         return docData(cocktailDocument) as Observable<Cocktail>
     }
 
+    /**
+     * Updates Writeable Signal FilterFunction with new filter
+     *
+     * @param filterFunction a function to filter the totalCocktail array
+     *
+     * @return Void
+     **/
     updateFilter(
         filterFunc: (
             value: Cocktail,
@@ -70,6 +89,13 @@ export class BarRamonService {
         this.filterFunction.set(filterFunc)
     }
 
+    /**
+     * Adds subscriber to the Bar Ramon Contact list and sends a welcome email
+     *
+     * @param contact Email address of the subscriber
+     *
+     * @return An observable of the http response with body and headers
+     **/
     addSubscriber(contact: Contact): Observable<HttpResponse<string>> {
         return this.http.post(
             `${environment.emailServiceUrl}/contact`,
