@@ -86,6 +86,8 @@ export class PagerComponent implements OnInit, OnDestroy {
             start: (this.currentPage - 1) * this.pageSize,
             end: this.currentPage * this.pageSize,
         })
-        this._document.defaultView?.scrollTo(0, 0)
+        if (typeof this._document.defaultView?.scrollTo === "function") {
+            this._document.defaultView?.scrollTo(0, 0)
+        }
     }
 }

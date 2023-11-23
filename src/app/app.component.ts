@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core"
+import { Component, afterNextRender } from "@angular/core"
 import { NavLink } from "./models/nav-link"
 import { Analytics } from "@angular/fire/analytics"
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router"
@@ -13,19 +13,19 @@ import { FooterComponent } from "./footer/footer.component"
     templateUrl: "./app.component.html",
     styleUrls: ["./app.component.css"],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
     navLinks: NavLink[] = [{ title: "Home", path: "/" }]
 
-    constructor(private ga: Analytics, private router: Router) {}
-
-    ngOnInit(): void {
-        this.router.events.subscribe((v) => {
-            if (v instanceof NavigationEnd) {
-                logEvent(this.ga, "screen_view", {
-                    firebase_screen: v.url,
-                    firebase_screen_class: "cocktail-page",
-                })
-            }
+    constructor(private ga: Analytics, private router: Router) {
+        afterNextRender(() => {
+            this.router.events.subscribe((v) => {
+                if (v instanceof NavigationEnd) {
+                    logEvent(this.ga, "screen_view", {
+                        firebase_screen: v.url,
+                        firebase_screen_class: "cocktail-page",
+                    })
+                }
+            })
         })
     }
 }
