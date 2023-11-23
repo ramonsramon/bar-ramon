@@ -1,5 +1,5 @@
 <div class="cocktails">
-    @for (cocktail of cocktails; track cocktail.RecipeName) {
-    <cocktail-card [cocktail]="cocktail"></cocktail-card>
+    @for (cocktail of cocktails; track cocktail.RecipeName; let i = $index) {
+    <cocktail-card [cocktail]="cocktail" [cocktailIndex]="i"></cocktail-card>
     }
 </div>

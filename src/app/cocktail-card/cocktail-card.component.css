@@ -20,7 +20,6 @@
 .photo {
     object-fit: cover;
     border-radius: 5px 5px 0 0;
-    width: 100%;
 }
 
 @media (prefers-color-scheme: dark) {

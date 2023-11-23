@@ -1,11 +1,24 @@
 <div class="cocktailList">
     <a class="link" [routerLink]="cocktailLink">
         <div>
+            @if (cocktailIndex < 3) {
             <img
                 class="photo"
-                [src]="cocktailImage"
+                [ngSrc]="cocktailImage"
                 [alt]="cocktail.ImageAlt"
+                width="350"
+                height="350"
+                priority
             />
+            } @else {
+            <img
+                class="photo"
+                [ngSrc]="cocktailImage"
+                [alt]="cocktail.ImageAlt"
+                width="350"
+                height="350"
+            />
+            }
         </div>
         <div class="info">
             <p>{{ cocktail.RecipeName }}</p>
