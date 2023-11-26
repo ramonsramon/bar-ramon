@@ -1,7 +1,18 @@
+button {
+    display: block;
+    width: 100%;
+    max-width: 45px;
+    border-radius: 1rem;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+}
+
 .pager-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 5px;
 }
 
 .page-button {
