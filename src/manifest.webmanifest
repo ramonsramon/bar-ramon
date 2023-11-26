@@ -8,6 +8,36 @@
     "display": "standalone",
     "scope": "./",
     "start_url": "./",
+    "screenshots": [
+        {
+            "src": "assets/img/16x9/wide.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Bar Ramon Homescreen"
+        },
+        {
+            "src": "assets/img/16x9/wide2.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Bar Ramon Eggnog Recipe"
+        },
+        {
+            "src": "assets/img/9x16/narrow.png",
+            "sizes": "450x800",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Bar Ramon Homescreen"
+        },
+        {
+            "src": "assets/img/9x16/narrow2.png",
+            "sizes": "450x800",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Bar Ramon Espresso Martini Recipe"
+        }
+    ],
     "icons": [
         {
             "src": "assets/icons/icon-72x72.png",
