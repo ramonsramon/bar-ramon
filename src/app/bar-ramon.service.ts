@@ -2,6 +2,7 @@ import {
     Injectable,
     Signal,
     WritableSignal,
+    afterNextRender,
     computed,
     signal,
 } from "@angular/core"
@@ -11,6 +12,7 @@ import {
     collection,
     doc,
     docData,
+    enableIndexedDbPersistence,
 } from "@angular/fire/firestore"
 import { Observable } from "rxjs"
 import { Cocktail } from "./models/cocktail"
@@ -35,7 +37,11 @@ export class BarRamonService {
         )
     )
 
-    constructor(private firestore: Firestore, private http: HttpClient) {}
+    constructor(private firestore: Firestore, private http: HttpClient) {
+        afterNextRender(() => {
+            enableIndexedDbPersistence(this.firestore)
+        })
+    }
 
     /**
      * Gets a Computed Signal of filtered cocktails that is dependent on totalCocktails and the filter function
