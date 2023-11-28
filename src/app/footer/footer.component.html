@@ -71,14 +71,33 @@
             <h3>Get Notified</h3>
             <form [formGroup]="newSubForm" (ngSubmit)="submit()">
                 <div class="email-input">
+                    @if (isLoading) {
+                    <mat-spinner class="email-input-prefix"></mat-spinner>
+                    } @else if (isSuccess) {
+                    <mat-icon class="email-input-status success"
+                        >check_circle</mat-icon
+                    >
+                    } @else if (isFailure) {
+                    <mat-icon class="email-input-status warning"
+                        >cancel</mat-icon
+                    >
+                    } @else {
                     <mat-icon class="email-input-prefix">mail</mat-icon>
+                    }
                     <input
                         type="text"
                         formControlName="email"
                         placeholder="Email Address"
                         class="email-input-field"
                     />
-                    <button class="email-input-suffix">Submit</button>
+                    <button
+                        class="email-input-suffix"
+                        [disabled]="
+                            newSubForm.invalid || isLoading || isSuccess
+                        "
+                    >
+                        Submit
+                    </button>
                 </div>
             </form>
         </div>

@@ -60,6 +60,14 @@ iframe {
     display: none;
 }
 
+.warning {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: var(--dark-grey);

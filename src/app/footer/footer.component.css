@@ -36,9 +36,11 @@ h3 {
     max-width: 450px;
 }
 
-.email-input-prefix {
+.email-input-prefix,
+.email-input-status {
     width: 100%;
     max-width: 25px;
+    max-height: 25px;
     margin-right: 0.5rem;
 }
 
@@ -64,6 +66,12 @@ h3 {
     border: none;
     background-color: var(--pink);
     color: var(--white);
+    cursor: pointer;
+}
+
+.email-input-suffix:disabled {
+    opacity: 0.5;
+    cursor: initial;
 }
 
 .copyright {
