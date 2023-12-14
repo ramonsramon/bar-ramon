@@ -6,14 +6,13 @@ import { CocktailListComponent } from "../cocktail-list/cocktail-list.component"
 import { PagerComponent } from "../pager/pager.component"
 import { FormsModule } from "@angular/forms"
 import { MatIconModule } from "@angular/material/icon"
-import { Cursor } from "../models/cursor"
 import { ActivatedRoute, Router } from "@angular/router"
 import { first } from "rxjs"
 
 type BarRamonParams = {
     search?: string
-    start: number
-    end: number
+    page: number
+    pageSize: number
 }
 
 @Component({
@@ -29,10 +28,11 @@ type BarRamonParams = {
     styleUrls: ["./home-page.component.css"],
 })
 export class HomePageComponent implements OnInit, OnDestroy {
-    readonly baseCursor: Cursor = { start: 0, end: 10 }
+    readonly basePage: number = 1
     cocktails: Signal<Cocktail[]> = this.barRamonService.getCocktails()
     searchValue: string = ""
-    cursor: Cursor = this.baseCursor
+    currentPage: number = this.basePage
+    pageSize: number = 10
 
     constructor(
         private barRamonService: BarRamonService,
@@ -51,7 +51,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
             if (searchParamValue) {
                 this.searchValue = searchParamValue
             }
-            this.searchCocktails(this.cursor)
+            this.searchCocktails(this.currentPage)
         })
     }
 
@@ -59,11 +59,11 @@ export class HomePageComponent implements OnInit, OnDestroy {
         this.meta.removeTag("name=description")
     }
 
-    searchCocktails(cursor: Cursor) {
-        this.cursor = cursor
+    searchCocktails(page: number) {
+        this.currentPage = page
         let queryParams: BarRamonParams = {
-            start: this.cursor.start,
-            end: this.cursor.end,
+            page: this.currentPage,
+            pageSize: this.pageSize,
         }
         let filterFunc = (value: Cocktail) => true
         if (this.searchValue.length > 0) {
@@ -88,6 +88,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
     clear() {
         this.searchValue = ""
-        this.searchCocktails(this.baseCursor)
+        this.searchCocktails(this.basePage)
     }
 }

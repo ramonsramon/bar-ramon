@@ -12,7 +12,6 @@ import { MatIconModule } from "@angular/material/icon"
 import { DOCUMENT, NgClass } from "@angular/common"
 import { MatButtonModule } from "@angular/material/button"
 import { BarRamonService } from "../bar-ramon.service"
-import { Cursor } from "../models/cursor"
 import { ActivatedRoute } from "@angular/router"
 import { Subscription } from "rxjs"
 
@@ -37,7 +36,7 @@ export class PagerComponent implements OnInit, OnDestroy {
         return pages.sort()
     })
     subscriptions: Subscription = new Subscription()
-    @Output() cursor: EventEmitter<Cursor> = new EventEmitter()
+    @Output() onPageChange: EventEmitter<number> = new EventEmitter()
 
     constructor(
         private barRamonService: BarRamonService,
@@ -47,10 +46,9 @@ export class PagerComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         const queryParamSub = this.route.queryParamMap.subscribe((params) => {
-            const cursorEndValue = params.get("end")
-            if (cursorEndValue) {
-                const page = Number(cursorEndValue) / this.pageSize
-                this.selectPage(page)
+            const page = params.get("page")
+            if (page) {
+                this.selectPage(Number(page))
             } else {
                 this.selectPage(1)
             }
@@ -82,10 +80,7 @@ export class PagerComponent implements OnInit, OnDestroy {
     }
 
     pageChange() {
-        this.cursor.emit({
-            start: (this.currentPage - 1) * this.pageSize,
-            end: this.currentPage * this.pageSize,
-        })
+        this.onPageChange.emit(this.currentPage)
         if (typeof this._document.defaultView?.scrollTo === "function") {
             this._document.defaultView?.scrollTo(0, 0)
         }
