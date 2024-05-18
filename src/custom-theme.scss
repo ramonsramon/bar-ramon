@@ -1,7 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use "@angular/material" as mat;
-@import "@angular/material/theming";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,7 +19,7 @@ $bar-ramon-config: mat.define-typography-config(
     $body-2: mat.define-typography-level(16px, 1.5, 400, Montserrat),
 );
 
-@include angular-material-typography($bar-ramon-config);
+@include mat.typography-hierarchy($bar-ramon-config);
 
 $lavendar-palette: (
     50: #f7e0f7,
@@ -112,6 +111,7 @@ $bar-ramon-theme: mat.define-light-theme(
             accent: $bar-ramon-accent,
             warn: $bar-ramon-warn,
         ),
+        typography: $bar-ramon-config,
     )
 );
 
@@ -122,6 +122,7 @@ $bar-ramon-theme: mat.define-dark-theme(
             accent: $bar-ramon-accent,
             warn: $bar-ramon-warn,
         ),
+        typography: $bar-ramon-config,
     )
 );
 // Include theme styles for core and each component used in your app.
