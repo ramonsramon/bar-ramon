@@ -39,15 +39,9 @@ bootstrapApplication(AppComponent, {
     providers: [
         BarRamonService,
         provideHttpClient(withFetch()),
-        importProvidersFrom(
-            provideFirebaseApp(() => initializeApp(environment.firebase))
-        ),
-        importProvidersFrom(
-            provideFirestore(() =>
-                getFirestore(getApp(), environment.databaseId)
-            )
-        ),
-        importProvidersFrom(provideAnalytics(() => getAnalytics())),
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(() => getFirestore(getApp(), environment.databaseId)),
+        provideAnalytics(() => getAnalytics()),
         importProvidersFrom(
             ServiceWorkerModule.register("ngsw-worker.js", {
                 enabled: !isDevMode(),

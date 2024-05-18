@@ -48,15 +48,11 @@ export default () =>
             BarRamonService,
             provideHttpClient(withFetch()),
             provideClientHydration(),
-            importProvidersFrom(
-                provideFirebaseApp(() => initializeApp(environment.firebase))
+            provideFirebaseApp(() => initializeApp(environment.firebase)),
+            provideFirestore(() =>
+                getFirestore(getApp(), environment.databaseId)
             ),
-            importProvidersFrom(
-                provideFirestore(() =>
-                    getFirestore(getApp(), environment.databaseId)
-                )
-            ),
-            importProvidersFrom(provideAnalytics(() => getAnalytics())),
+            provideAnalytics(() => getAnalytics()),
             importProvidersFrom(
                 ServiceWorkerModule.register("ngsw-worker.js", {
                     enabled: !isDevMode(),
