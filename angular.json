@@ -11,23 +11,34 @@
             "prefix": "app",
             "architect": {
                 "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
+                    "builder": "@angular-devkit/build-angular:application",
                     "options": {
-                        "outputPath": "dist/bar-ramon/browser",
-                        "index": "src/index.html",
-                        "main": "src/main.ts",
-                        "polyfills": ["zone.js"],
-                        "tsConfig": "tsconfig.app.json",
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets",
-                            "src/sitemap.xml",
-                            "src/manifest.webmanifest"
-                        ],
-                        "styles": ["src/custom-theme.scss", "src/styles.css"],
-                        "scripts": [],
-                        "serviceWorker": true,
-                        "ngswConfigPath": "ngsw-config.json"
+                      "outputPath": {
+                        "base": "dist/bar-ramon"
+                      },
+                      "index": "src/index.html",
+                      "polyfills": [
+                        "zone.js"
+                      ],
+                      "tsConfig": "tsconfig.app.json",
+                      "assets": [
+                        "src/favicon.ico",
+                        "src/assets",
+                        "src/sitemap.xml",
+                        "src/manifest.webmanifest"
+                      ],
+                      "styles": [
+                        "src/custom-theme.scss",
+                        "src/styles.css"
+                      ],
+                      "scripts": [],
+                      "serviceWorker": "ngsw-config.json",
+                      "browser": "src/main.ts",
+                      "server": "src/main.server.ts",
+                      "prerender": true,
+                      "ssr": {
+                        "entry": "server.ts"
+                      }
                     },
                     "configurations": {
                         "production": {
@@ -46,9 +57,7 @@
                             "outputHashing": "all"
                         },
                         "development": {
-                            "buildOptimizer": false,
-                            "optimization": false,
-                            "vendorChunk": true,
+                          "optimization": false,
                             "extractLicenses": false,
                             "sourceMap": true,
                             "namedChunks": true,
@@ -104,47 +113,6 @@
                         "browserTarget": "bar-ramon:build:production",
                         "serverTarget": "bar-ramon:server:production"
                     }
-                },
-                "server": {
-                    "builder": "@angular-devkit/build-angular:server",
-                    "options": {
-                        "outputPath": "dist/bar-ramon/server",
-                        "main": "server.ts",
-                        "tsConfig": "tsconfig.server.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "outputHashing": "media"
-                        },
-                        "development": {
-                            "buildOptimizer": false,
-                            "fileReplacements": [
-                                {
-                                    "replace": "src/environments/environment.ts",
-                                    "with": "src/environments/environment.development.ts"
-                                }
-                            ],
-                            "optimization": false,
-                            "sourceMap": true,
-                            "extractLicenses": false,
-                            "vendorChunk": true
-                        }
-                    },
-                    "defaultConfiguration": "production"
-                },
-                "serve-ssr": {
-                    "builder": "@angular-devkit/build-angular:ssr-dev-server",
-                    "configurations": {
-                        "development": {
-                            "browserTarget": "bar-ramon:build:development",
-                            "serverTarget": "bar-ramon:server:development"
-                        },
-                        "production": {
-                            "browserTarget": "bar-ramon:build:production",
-                            "serverTarget": "bar-ramon:server:production"
-                        }
-                    },
-                    "defaultConfiguration": "development"
                 }
             }
         }
