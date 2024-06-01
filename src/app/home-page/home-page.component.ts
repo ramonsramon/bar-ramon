@@ -8,6 +8,7 @@ import { FormsModule } from "@angular/forms"
 import { MatIconModule } from "@angular/material/icon"
 import { ActivatedRoute, Router } from "@angular/router"
 import { first } from "rxjs"
+import { Analytics, logEvent } from "@angular/fire/analytics"
 
 type BarRamonParams = {
     search?: string
@@ -38,7 +39,8 @@ export class HomePageComponent implements OnInit, OnDestroy {
         private barRamonService: BarRamonService,
         private meta: Meta,
         private router: Router,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private ga: Analytics
     ) {}
 
     ngOnInit(): void {
@@ -68,6 +70,9 @@ export class HomePageComponent implements OnInit, OnDestroy {
         let filterFunc = (value: Cocktail) => true
         if (this.searchValue.length > 0) {
             queryParams.search = this.searchValue.toLowerCase()
+            logEvent(this.ga, "search", {
+                search_term: this.searchValue.toLowerCase(),
+            })
             filterFunc = (value: Cocktail) => {
                 return (
                     value.RecipeName.toLowerCase().includes(
