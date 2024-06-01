@@ -6,7 +6,12 @@ import { getApp, provideFirebaseApp } from "@angular/fire/app"
 import { initializeApp } from "firebase/app"
 import { environment } from "./environments/environment"
 import { importProvidersFrom, isDevMode } from "@angular/core"
-import { getFirestore, provideFirestore } from "@angular/fire/firestore"
+import {
+    getFirestore,
+    initializeFirestore,
+    persistentLocalCache,
+    provideFirestore,
+} from "@angular/fire/firestore"
 import { getAnalytics, provideAnalytics } from "@angular/fire/analytics"
 import { ServiceWorkerModule } from "@angular/service-worker"
 import { Routes, provideRouter } from "@angular/router"
@@ -40,7 +45,13 @@ bootstrapApplication(AppComponent, {
         BarRamonService,
         provideHttpClient(withFetch()),
         provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideFirestore(() => getFirestore(getApp(), environment.databaseId)),
+        provideFirestore(() =>
+            initializeFirestore(
+                getApp(),
+                { localCache: persistentLocalCache({}) },
+                environment.databaseId
+            )
+        ),
         provideAnalytics(() => getAnalytics()),
         importProvidersFrom(
             ServiceWorkerModule.register("ngsw-worker.js", {
