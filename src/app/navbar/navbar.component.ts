@@ -2,14 +2,16 @@ import { Component, Input, OnDestroy, OnInit } from "@angular/core"
 import { NavLink } from "../models/nav-link"
 import { NavigationEnd, Router, RouterLink } from "@angular/router"
 import { filter } from "rxjs/operators"
-import { Subscription } from "rxjs"
+import { Observable, Subscription } from "rxjs"
 import { MatIconModule } from "@angular/material/icon"
-import { NgClass } from "@angular/common"
+import { AsyncPipe, NgClass } from "@angular/common"
+import { BarRamonService } from "../bar-ramon.service"
+import { User } from "firebase/auth"
 
 @Component({
     selector: "navbar",
     standalone: true,
-    imports: [MatIconModule, RouterLink, NgClass],
+    imports: [MatIconModule, RouterLink, NgClass, AsyncPipe],
     templateUrl: "./navbar.component.html",
     styleUrls: ["./navbar.component.css"],
 })
@@ -17,8 +19,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
     @Input() navLinks: NavLink[] = []
     isHidden = true
     subscriptions: Subscription = new Subscription()
+    user$: Observable<User | null>
 
-    constructor(private router: Router) {}
+    constructor(
+        private router: Router,
+        private barRamonService: BarRamonService
+    ) {
+        this.user$ = this.barRamonService.getUser()
+    }
 
     ngOnInit(): void {
         const routerSub = this.router.events
@@ -37,5 +45,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
     togglePopout() {
         this.isHidden = !this.isHidden
+    }
+
+    logout() {
+        this.barRamonService.logout()
     }
 }

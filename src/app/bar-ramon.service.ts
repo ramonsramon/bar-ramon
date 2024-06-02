@@ -3,6 +3,7 @@ import {
     Signal,
     WritableSignal,
     computed,
+    inject,
     signal,
 } from "@angular/core"
 import {
@@ -17,6 +18,15 @@ import { Cocktail } from "./models/cocktail"
 import { HttpClient, HttpResponse } from "@angular/common/http"
 import { Contact } from "./models/contact"
 import { environment } from "src/environments/environment"
+import {
+    Auth,
+    User,
+    UserCredential,
+    signInWithEmailAndPassword,
+    signOut,
+    user,
+} from "@angular/fire/auth"
+import { Creds } from "./models/creds"
 
 @Injectable({
     providedIn: "root",
@@ -35,7 +45,11 @@ export class BarRamonService {
         )
     )
 
-    constructor(private firestore: Firestore, private http: HttpClient) {}
+    constructor(
+        private firestore: Firestore,
+        private http: HttpClient,
+        private auth: Auth
+    ) {}
 
     /**
      * Gets a Computed Signal of filtered cocktails that is dependent on totalCocktails and the filter function
@@ -105,5 +119,21 @@ export class BarRamonService {
                 observe: "response",
             }
         )
+    }
+
+    login(creds: Creds): Promise<UserCredential> {
+        return signInWithEmailAndPassword(
+            this.auth,
+            creds.email,
+            creds.password
+        )
+    }
+
+    logout(): Promise<void> {
+        return signOut(this.auth)
+    }
+
+    getUser(): Observable<User | null> {
+        return user(this.auth)
     }
 }

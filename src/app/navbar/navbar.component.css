@@ -55,6 +55,10 @@ hr {
     font-size: 1.25rem;
 }
 
+.logout-btn {
+    cursor: pointer;
+}
+
 /* Tablet Breakpoint */
 @media (min-width: 834px) {
     .nav-desktop-menu {

@@ -9,6 +9,8 @@
         <div class="nav-desktop-menu">
             @for (navLink of navLinks; track navLink.title) {
             <a [routerLink]="navLink.path">{{ navLink.title }}</a>
+            } @if (user$ | async) {
+            <a class="logout-btn" (click)="logout()">Logout</a>
             }
         </div>
     </div>
@@ -17,6 +19,8 @@
             @for (navLink of navLinks; track navLink.title) {
             <a [routerLink]="navLink.path">{{ navLink.title }}</a>
             <hr />
+            } @if (user$ | async) {
+            <a class="logout-btn" (click)="logout()">Logout</a>
             }
         </div>
     </div>
