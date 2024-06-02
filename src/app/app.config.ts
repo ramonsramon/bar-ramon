@@ -9,7 +9,7 @@ import { provideAnalytics } from "@angular/fire/analytics"
 import { getAnalytics } from "firebase/analytics"
 import { provideAuth } from "@angular/fire/auth"
 import { getAuth } from "firebase/auth"
-import { provideNoopAnimations } from "@angular/platform-browser/animations"
+import { provideAnimations } from "@angular/platform-browser/animations"
 import { importProvidersFrom, isDevMode } from "@angular/core"
 import { ServiceWorkerModule } from "@angular/service-worker"
 import { provideRouter } from "@angular/router"
@@ -31,7 +31,7 @@ export const appConfig = {
         ),
         provideAnalytics(() => getAnalytics()),
         provideAuth(() => getAuth()),
-        provideNoopAnimations(),
+        provideAnimations(),
         importProvidersFrom(
             ServiceWorkerModule.register("ngsw-worker.js", {
                 enabled: !isDevMode(),
