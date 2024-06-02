@@ -10,19 +10,5 @@
             "rules": "firestore.test.rules",
             "indexes": "firestore.test.indexes.json"
         }
-    ],
-    "hosting": [
-        {
-            "source": ".",
-            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-            "frameworksBackend": {
-                "region": "us-central1"
-            }
-        },
-        {
-            "target": "bar-ramon",
-            "source": "",
-            "frameworksBackend": ""
-        }
     ]
 }
