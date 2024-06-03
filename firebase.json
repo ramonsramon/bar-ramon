@@ -1,14 +1,17 @@
 {
-    "firestore": [
-        {
-            "database": "(default)",
-            "rules": "firestore.default.rules",
-            "indexes": "firestore.default.indexes.json"
-        },
-        {
-            "database": "test",
-            "rules": "firestore.test.rules",
-            "indexes": "firestore.test.indexes.json"
-        }
-    ]
+  "firestore": [
+    {
+      "database": "(default)",
+      "rules": "firestore.default.rules",
+      "indexes": "firestore.default.indexes.json"
+    },
+    {
+      "database": "test",
+      "rules": "firestore.test.rules",
+      "indexes": "firestore.test.indexes.json"
+    }
+  ],
+  "storage": {
+    "rules": "storage.rules"
+  }
 }
