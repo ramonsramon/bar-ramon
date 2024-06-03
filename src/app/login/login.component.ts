@@ -10,6 +10,7 @@ import { MatFormFieldModule } from "@angular/material/form-field"
 import { MatInputModule } from "@angular/material/input"
 import { BarRamonService } from "../bar-ramon.service"
 import { Creds } from "../models/creds"
+import { Router } from "@angular/router"
 
 type SignInForm = {
     email: FormControl<string | null>
@@ -32,15 +33,15 @@ export class LoginComponent {
     signInForm: FormGroup<SignInForm>
     creds: Creds
 
-    constructor(private barRamonService: BarRamonService) {
+    constructor(
+        private router: Router,
+        private barRamonService: BarRamonService
+    ) {
         this.signInForm = new FormGroup({
             email: new FormControl("", Validators.required),
             password: new FormControl("", Validators.required),
         })
         this.creds = { email: "", password: "" }
-        this.barRamonService.getUser().subscribe((u) => {
-            console.log(u)
-        })
     }
 
     signIn(): void {
@@ -51,7 +52,9 @@ export class LoginComponent {
             }
             this.barRamonService
                 .login(this.creds)
-                .then()
+                .then(() => {
+                    this.router.navigate([""])
+                })
                 .catch((err) => {
                     console.log(err)
                 })
