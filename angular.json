@@ -13,32 +13,27 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
                     "options": {
-                      "outputPath": {
-                        "base": "dist/bar-ramon"
-                      },
-                      "index": "src/index.html",
-                      "polyfills": [
-                        "zone.js"
-                      ],
-                      "tsConfig": "tsconfig.app.json",
-                      "assets": [
-                        "src/favicon.ico",
-                        "src/assets",
-                        "src/sitemap.xml",
-                        "src/manifest.webmanifest"
-                      ],
-                      "styles": [
-                        "src/custom-theme.scss",
-                        "src/styles.css"
-                      ],
-                      "scripts": [],
-                      "serviceWorker": "ngsw-config.json",
-                      "browser": "src/main.ts",
-                      "server": "src/main.server.ts",
-                      "prerender": true,
-                      "ssr": {
-                        "entry": "server.ts"
-                      }
+                        "outputPath": {
+                            "base": "dist/bar-ramon"
+                        },
+                        "index": "src/index.html",
+                        "polyfills": ["zone.js"],
+                        "tsConfig": "tsconfig.app.json",
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets",
+                            "src/sitemap.xml",
+                            "src/manifest.webmanifest"
+                        ],
+                        "styles": ["src/custom-theme.scss", "src/styles.css"],
+                        "scripts": [],
+                        "serviceWorker": "ngsw-config.json",
+                        "browser": "src/main.ts",
+                        "server": "src/main.server.ts",
+                        "prerender": true,
+                        "ssr": {
+                            "entry": "server.ts"
+                        }
                     },
                     "configurations": {
                         "production": {
@@ -57,7 +52,7 @@
                             "outputHashing": "all"
                         },
                         "development": {
-                          "optimization": false,
+                            "optimization": false,
                             "extractLicenses": false,
                             "sourceMap": true,
                             "namedChunks": true,
@@ -75,10 +70,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                          "buildTarget": "bar-ramon:build:production"
+                            "buildTarget": "bar-ramon:build:production"
                         },
                         "development": {
-                          "buildTarget": "bar-ramon:build:development"
+                            "buildTarget": "bar-ramon:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -86,7 +81,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                      "buildTarget": "bar-ramon:build"
+                        "buildTarget": "bar-ramon:build"
                     }
                 },
                 "test": {
@@ -97,9 +92,6 @@
                         "assets": [
                             "src/favicon.ico",
                             "src/assets",
-                            "src/manifest.webmanifest",
-                            "src/manifest.webmanifest",
-                            "src/manifest.webmanifest",
                             "src/manifest.webmanifest"
                         ],
                         "styles": ["src/styles.css"],

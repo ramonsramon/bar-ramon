@@ -10,4 +10,5 @@ export const environment = {
     },
     databaseId: "test",
     emailServiceUrl: "https://email.aggieramon.com",
+    assetsUrl: "https://storage.googleapis.com/bar-ramon.appspot.com",
 }

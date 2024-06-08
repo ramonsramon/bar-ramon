@@ -3,6 +3,7 @@ import { Cocktail, EMPTY_COCKTAIL } from "../models/cocktail"
 import { BubbleComponent } from "../bubble/bubble.component"
 import { RouterLink } from "@angular/router"
 import { NgOptimizedImage } from "@angular/common"
+import { environment } from "src/environments/environment"
 
 @Component({
     selector: "cocktail-card",
@@ -24,6 +25,6 @@ export class CocktailCardComponent implements OnInit {
             " ",
             "-"
         ).toLowerCase()}`
-        this.cocktailImage = `/assets/img/1x1/${this.cocktail.Image}`
+        this.cocktailImage = `${environment.assetsUrl}/images/1x1/${this.cocktail.Image}`
     }
 }

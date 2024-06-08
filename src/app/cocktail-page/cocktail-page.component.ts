@@ -14,6 +14,7 @@ import { Recipe } from "../models/recipe"
 import { DOCUMENT } from "@angular/common"
 import { BubbleComponent } from "../bubble/bubble.component"
 import { MoreInfoComponent } from "../more-info/more-info.component"
+import { environment } from "src/environments/environment"
 
 @Component({
     selector: "cocktail-page",
@@ -60,7 +61,7 @@ export class CocktailPageComponent implements OnInit, OnDestroy {
                         this.sanitizer.bypassSecurityTrustResourceUrl(
                             value.VideoEmbedUrl
                         )
-                    this.cocktailImage = `assets/img/1x1/${value.Image}`
+                    this.cocktailImage = `${environment.assetsUrl}/images/1x1/${value.Image}`
                     this.updateHead(this.cocktail)
                 } else {
                     this.router.navigate(["/"])
@@ -86,9 +87,9 @@ export class CocktailPageComponent implements OnInit, OnDestroy {
             "@type": "Recipe",
             name: cocktail.RecipeName,
             image: [
-                `/assets/img/1x1/${cocktail.Image}`,
-                `/assets/img/4x3/${cocktail.Image}`,
-                `/assets/img/16x9/${cocktail.Image}`,
+                `${environment.assetsUrl}/images/1x1/${cocktail.Image}`,
+                `${environment.assetsUrl}/images/4x3/${cocktail.Image}`,
+                `${environment.assetsUrl}/images/16x9/${cocktail.Image}`,
             ],
             author: {
                 "@type": "Person",
