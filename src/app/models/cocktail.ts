@@ -110,7 +110,7 @@ export type StepFormGroup = {
 }
 
 export const DEFAULT_COCKTAIL_FORM: CocktailFormGroup = {
-    Author: new FormControl(""),
+    Author: new FormControl("Ramon Ramon"),
     Title: new FormControl(""),
     Description: new FormControl(""),
     PublishDate: new FormControl(""),
@@ -123,17 +123,57 @@ export const DEFAULT_COCKTAIL_FORM: CocktailFormGroup = {
     CookTime: new FormControl(""),
     TotalTime: new FormControl(""),
     Keywords: new FormControl(""),
-    RatingValue: new FormControl(0),
-    RatingCount: new FormControl(""),
+    RatingValue: new FormControl(5),
+    RatingCount: new FormControl("1"),
     RecipeGlass: new FormControl(""),
     RecipeYield: new FormControl(0),
-    RecipeCategory: new FormControl(""),
-    RecipeCuisine: new FormControl(""),
+    RecipeCategory: new FormControl("Drink"),
+    RecipeCuisine: new FormControl("American"),
     RecipeIngredient: new FormArray([new FormControl("")]),
     RecipeInstructions: new FormArray([
         new FormGroup({
-            StepName: new FormControl(""),
-            StepDescription: new FormControl(""),
+            StepName: new FormControl("Chill glassware"),
+            StepDescription: new FormControl(
+                "Place glass into freezer before preparing the cocktail"
+            ),
+        }),
+        new FormGroup({
+            StepName: new FormControl("Add ingredients"),
+            StepDescription: new FormControl(
+                "All all ingredients to large side of the Boston Shaker"
+            ),
+        }),
+        new FormGroup({
+            StepName: new FormControl("Add ice"),
+            StepDescription: new FormControl(
+                "Fill small side of Boston Shaker with ice"
+            ),
+        }),
+        new FormGroup({
+            StepName: new FormControl("Wet shake"),
+            StepDescription: new FormControl("Shake for 30 seconds"),
+        }),
+        new FormGroup({
+            StepName: new FormControl("Strain"),
+            StepDescription: new FormControl(
+                "Remove small side of the Boston Shaker and strain drink from larger side into the smaller side of the Boston Shaker"
+            ),
+        }),
+        new FormGroup({
+            StepName: new FormControl("Prep for shake"),
+            StepDescription: new FormControl(
+                "Dump the ice from the larger side of the Boston Shaker and place the small side onto the larger side"
+            ),
+        }),
+        new FormGroup({
+            StepName: new FormControl("Dry shake"),
+            StepDescription: new FormControl("Shake for 15 seconds"),
+        }),
+        new FormGroup({
+            StepName: new FormControl("Serve"),
+            StepDescription: new FormControl(
+                "Double strain into glass using the Hawthorne strainer and fine mesh strainer"
+            ),
         }),
     ]),
     Calories: new FormControl(0),
