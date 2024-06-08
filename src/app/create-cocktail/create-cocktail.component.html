@@ -1,0 +1,42 @@
+<div class="container mw-1000">
+    <form [formGroup]="createCocktailForm" (ngSubmit)="submit()">
+        <mat-form-field>
+            <mat-label>Cocktail Name</mat-label>
+            <input matInput type="text" formControlName="RecipeName" />
+        </mat-form-field>
+        <div formArrayName="RecipeIngredient">
+            @for (ingredient of RecipeIngredient.controls; track ingredient) {
+            <mat-form-field>
+                <mat-label>Ingredient {{ $index + 1 }}</mat-label>
+                <input matInput type="text" [formControlName]="$index" />
+            </mat-form-field>
+            }
+        </div>
+        <div formArrayName="RecipeInstructions">
+            @for (instruction of RecipeInstructions.controls; track
+            RecipeInstructions) {
+            <div [formGroupName]="$index">
+                <mat-form-field>
+                    <mat-label>Step {{ $index + 1 }} Name</mat-label>
+                    <input matInput type="text" formControlName="StepName" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Step {{ $index + 1 }} Description</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        formControlName="StepDescription"
+                    />
+                </mat-form-field>
+            </div>
+            }
+        </div>
+        <mat-form-field>
+            <mat-label>Cocktail Glass</mat-label>
+            <input matInput type="text" formControlName="RecipeGlass" />
+        </mat-form-field>
+        <button mat-button [disabled]="createCocktailForm.invalid">
+            Create
+        </button>
+    </form>
+</div>
