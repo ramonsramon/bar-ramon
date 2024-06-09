@@ -1,0 +1,33 @@
+mat-form-field {
+    width: 100%;
+}
+
+.name-glass-info {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.recipe-header,
+.recipe-instruction-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.recipe-header > h2,
+.recipe-instruction-header > h2 {
+    margin: 0;
+}
+
+mat-divider {
+    margin-bottom: 1rem;
+}
+
+.action {
+    display: flex;
+    justify-content: end;
+}
+
+button {
+    width: 30%;
+}

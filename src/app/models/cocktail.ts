@@ -1,6 +1,7 @@
-import { FormArray, FormControl, FormGroup } from "@angular/forms"
+import { FormArray, FormControl, FormGroup, Validators } from "@angular/forms"
 
 export type Cocktail = {
+    [key: string]: string | number | string[] | Step[]
     Author: string
     Title: string
     Description: string
@@ -72,6 +73,11 @@ export const EMPTY_COCKTAIL: Cocktail = {
 }
 
 export type CocktailFormGroup = {
+    [key: string]:
+        | FormControl<string | null>
+        | FormControl<number | null>
+        | FormArray<FormControl<string | null>>
+        | FormArray<FormGroup<StepFormGroup>>
     Author: FormControl<string | null>
     Title: FormControl<string | null>
     Description: FormControl<string | null>
@@ -86,7 +92,7 @@ export type CocktailFormGroup = {
     TotalTime: FormControl<string | null>
     Keywords: FormControl<string | null>
     RatingValue: FormControl<number | null>
-    RatingCount: FormControl<string | null>
+    RatingCount: FormControl<number | null>
     RecipeGlass: FormControl<string | null>
     RecipeYield: FormControl<number | null>
     RecipeCategory: FormControl<string | null>
@@ -115,7 +121,7 @@ export const DEFAULT_COCKTAIL_FORM: CocktailFormGroup = {
     Description: new FormControl(""),
     PublishDate: new FormControl(""),
     RawIngredients: new FormControl(""),
-    RecipeName: new FormControl(""),
+    RecipeName: new FormControl("", Validators.required),
     PrimarySpirit: new FormControl(""),
     Image: new FormControl(""),
     ImageAlt: new FormControl(""),
@@ -124,7 +130,7 @@ export const DEFAULT_COCKTAIL_FORM: CocktailFormGroup = {
     TotalTime: new FormControl(""),
     Keywords: new FormControl(""),
     RatingValue: new FormControl(5),
-    RatingCount: new FormControl("1"),
+    RatingCount: new FormControl(1),
     RecipeGlass: new FormControl(""),
     RecipeYield: new FormControl(0),
     RecipeCategory: new FormControl("Drink"),
@@ -132,48 +138,8 @@ export const DEFAULT_COCKTAIL_FORM: CocktailFormGroup = {
     RecipeIngredient: new FormArray([new FormControl("")]),
     RecipeInstructions: new FormArray([
         new FormGroup({
-            StepName: new FormControl("Chill glassware"),
-            StepDescription: new FormControl(
-                "Place glass into freezer before preparing the cocktail"
-            ),
-        }),
-        new FormGroup({
-            StepName: new FormControl("Add ingredients"),
-            StepDescription: new FormControl(
-                "All all ingredients to large side of the Boston Shaker"
-            ),
-        }),
-        new FormGroup({
-            StepName: new FormControl("Add ice"),
-            StepDescription: new FormControl(
-                "Fill small side of Boston Shaker with ice"
-            ),
-        }),
-        new FormGroup({
-            StepName: new FormControl("Wet shake"),
-            StepDescription: new FormControl("Shake for 30 seconds"),
-        }),
-        new FormGroup({
-            StepName: new FormControl("Strain"),
-            StepDescription: new FormControl(
-                "Remove small side of the Boston Shaker and strain drink from larger side into the smaller side of the Boston Shaker"
-            ),
-        }),
-        new FormGroup({
-            StepName: new FormControl("Prep for shake"),
-            StepDescription: new FormControl(
-                "Dump the ice from the larger side of the Boston Shaker and place the small side onto the larger side"
-            ),
-        }),
-        new FormGroup({
-            StepName: new FormControl("Dry shake"),
-            StepDescription: new FormControl("Shake for 15 seconds"),
-        }),
-        new FormGroup({
-            StepName: new FormControl("Serve"),
-            StepDescription: new FormControl(
-                "Double strain into glass using the Hawthorne strainer and fine mesh strainer"
-            ),
+            StepName: new FormControl(""),
+            StepDescription: new FormControl(""),
         }),
     ]),
     Calories: new FormControl(0),

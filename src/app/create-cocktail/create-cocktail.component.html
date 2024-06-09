@@ -1,40 +1,72 @@
 <div class="container mw-1000">
     <form [formGroup]="createCocktailForm" (ngSubmit)="submit()">
-        <mat-form-field>
-            <mat-label>Cocktail Name</mat-label>
-            <input matInput type="text" formControlName="RecipeName" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Cocktail Description</mat-label>
-            <textarea
-                matInput
-                formControlName="Description"
-                cdkTextareaAutosize="true"
-            ></textarea>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Cocktail Glass</mat-label>
-            <input matInput type="text" formControlName="RecipeGlass" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Raw Ingredients</mat-label>
-            <textarea
-                matInput
-                formControlName="RawIngredients"
-                cdkTextareaAutosize="true"
-            ></textarea>
-        </mat-form-field>
-        <div formArrayName="RecipeIngredient">
-            @for (ingredient of RecipeIngredient.controls; track ingredient) {
+        <h2>The Basics</h2>
+        <div class="name-glass-info">
+            <mat-form-field>
+                <mat-label>Cocktail Name</mat-label>
+                <input matInput type="text" formControlName="RecipeName" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Glass</mat-label>
+                <input matInput type="text" formControlName="RecipeGlass" />
+            </mat-form-field>
+        </div>
+        <div class="description-raw-ingredients-info">
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea
+                    matInput
+                    formControlName="Description"
+                    cdkTextareaAutosize="true"
+                ></textarea>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Raw Ingredients</mat-label>
+                <textarea
+                    matInput
+                    formControlName="RawIngredients"
+                    cdkTextareaAutosize="true"
+                ></textarea>
+            </mat-form-field>
+        </div>
+        <div class="recipe-header">
+            <h2>Recipe Ingredients</h2>
+            <button mat-icon-button (click)="AddRemoveIngredient($event, true)">
+                <mat-icon>add</mat-icon>
+            </button>
+            <button
+                mat-icon-button
+                (click)="AddRemoveIngredient($event, false)"
+            >
+                <mat-icon>remove</mat-icon>
+            </button>
+        </div>
+        <div class="recipe" formArrayName="RecipeIngredient">
+            @for (ingredient of RecipeIngredient.controls; track $index) {
             <mat-form-field>
                 <mat-label>Recipe Ingredient {{ $index + 1 }}</mat-label>
                 <input matInput type="text" [formControlName]="$index" />
             </mat-form-field>
             }
         </div>
-        <div formArrayName="RecipeInstructions">
+        <div class="recipe-instruction-header">
+            <h2>Recipe Instructions</h2>
+            <button
+                mat-icon-button
+                (click)="AddRemoveInstruction($event, true)"
+            >
+                <mat-icon>add</mat-icon>
+            </button>
+            <button
+                mat-icon-button
+                (click)="AddRemoveInstruction($event, false)"
+            >
+                <mat-icon>remove</mat-icon>
+            </button>
+        </div>
+        <ng-container formArrayName="RecipeInstructions">
             @for (instruction of RecipeInstructions.controls; track $index) {
-            <div [formGroupName]="$index">
+            <div class="recipe-instruction" [formGroupName]="$index">
                 <mat-form-field>
                     <mat-label>Step {{ $index + 1 }} Name</mat-label>
                     <input matInput type="text" formControlName="StepName" />
@@ -47,67 +79,87 @@
                         cdkTextareaAutosize="true"
                     ></textarea>
                 </mat-form-field>
+                @if (!$last) {
+                <mat-divider></mat-divider>
+                }
             </div>
             }
+        </ng-container>
+        <h2>Additional Details</h2>
+        <div class="recipe-additional-info">
+            <mat-form-field>
+                <mat-label>Primary Spirit</mat-label>
+                <input matInput type="text" formControlName="PrimarySpirit" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Prep Time (in minutes)</mat-label>
+                <input matInput type="text" formControlName="PrepTime" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Cook Time (in minutes)</mat-label>
+                <input matInput type="text" formControlName="CookTime" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Serving Size</mat-label>
+                <input matInput type="number" formControlName="RecipeYield" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Calories</mat-label>
+                <input matInput type="number" formControlName="Calories" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Image Name</mat-label>
+                <input matInput type="text" formControlName="Image" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Image Alt Text</mat-label>
+                <input matInput type="text" formControlName="ImageAlt" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Keywords for search</mat-label>
+                <input matInput type="text" formControlName="Keywords" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Instruction Video Name</mat-label>
+                <input matInput type="text" formControlName="VideoName" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Instruction Video Description</mat-label>
+                <input
+                    matInput
+                    type="text"
+                    formControlName="VideoDescription"
+                />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Video Content URL</mat-label>
+                <input matInput type="text" formControlName="VideoContentUrl" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Video Embed URL</mat-label>
+                <input matInput type="text" formControlName="VideoEmbedUrl" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Video Upload Date</mat-label>
+                <input
+                    matInput
+                    type="datetime-local"
+                    formControlName="VideoUploadDate"
+                />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Video Thumbnail URL</mat-label>
+                <input
+                    matInput
+                    type="text"
+                    formControlName="VideoThumbnailUrl"
+                />
+            </mat-form-field>
         </div>
-        <mat-form-field>
-            <mat-label>Primary Spirit</mat-label>
-            <input matInput type="text" formControlName="PrimarySpirit" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Prep Time (in minutes)</mat-label>
-            <input matInput type="text" formControlName="PrepTime" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Cook Time (in minutes)</mat-label>
-            <input matInput type="text" formControlName="CookTime" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Serving Size</mat-label>
-            <input matInput type="number" formControlName="RecipeYield" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Calories</mat-label>
-            <input matInput type="number" formControlName="Calories" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Instruction Video Name</mat-label>
-            <input matInput type="text" formControlName="VideoName" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Instruction Video Description</mat-label>
-            <input matInput type="text" formControlName="VideoDescription" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Video Content URL</mat-label>
-            <input matInput type="text" formControlName="VideoContentUrl" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Video Embed URL</mat-label>
-            <input matInput type="text" formControlName="VideoEmbedUrl" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Video Upload Date</mat-label>
-            <input matInput type="text" formControlName="VideoUploadDate" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Video Thumbnail URL</mat-label>
-            <input matInput type="text" formControlName="VideoThumbnailUrl" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Image Name</mat-label>
-            <input matInput type="text" formControlName="Image" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Image Alt Text</mat-label>
-            <input matInput type="text" formControlName="ImageAlt" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Keywords for search</mat-label>
-            <input matInput type="text" formControlName="Keywords" />
-        </mat-form-field>
-        <button mat-button [disabled]="createCocktailForm.invalid">
-            Create
-        </button>
+        <div class="action">
+            <button mat-button [disabled]="createCocktailForm.invalid">
+                Create
+            </button>
+        </div>
     </form>
 </div>
