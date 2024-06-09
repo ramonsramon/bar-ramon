@@ -104,28 +104,45 @@ $bar-ramon-warn: mat.m2-define-palette($red-palette, 100);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$bar-ramon-theme: mat.m2-define-light-theme(
+$bar-ramon-light-theme: mat.m2-define-light-theme(
     (
         color: (
             primary: $bar-ramon-primary,
             accent: $bar-ramon-accent,
             warn: $bar-ramon-warn,
         ),
-        typography: $bar-ramon-config,
+        density: (
+            scale: "-1",
+        ),
     )
 );
 
-$bar-ramon-theme: mat.m2-define-dark-theme(
+$bar-ramon-dark-theme: mat.m2-define-dark-theme(
     (
         color: (
             primary: $bar-ramon-primary,
             accent: $bar-ramon-accent,
             warn: $bar-ramon-warn,
         ),
-        typography: $bar-ramon-config,
     )
 );
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($bar-ramon-theme);
+
+html {
+    @include mat.core-theme($bar-ramon-light-theme);
+    @include mat.button-theme($bar-ramon-light-theme);
+    @include mat.form-field-theme($bar-ramon-light-theme);
+    @include mat.input-theme($bar-ramon-light-theme);
+    @include mat.divider-theme($bar-ramon-light-theme);
+    @include mat.icon-button-theme($bar-ramon-light-theme);
+    @media (prefers-color-scheme: dark) {
+        @include mat.core-theme($bar-ramon-dark-theme);
+        @include mat.button-theme($bar-ramon-dark-theme);
+        @include mat.form-field-theme($bar-ramon-dark-theme);
+        @include mat.input-theme($bar-ramon-dark-theme);
+        @include mat.divider-theme($bar-ramon-dark-theme);
+        @include mat.icon-button-theme($bar-ramon-dark-theme);
+    }
+}

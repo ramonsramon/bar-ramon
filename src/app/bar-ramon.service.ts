@@ -3,7 +3,6 @@ import {
     Signal,
     WritableSignal,
     computed,
-    inject,
     signal,
 } from "@angular/core"
 import {
@@ -12,6 +11,7 @@ import {
     collection,
     doc,
     docData,
+    setDoc,
 } from "@angular/fire/firestore"
 import { Observable } from "rxjs"
 import { Cocktail } from "./models/cocktail"
@@ -84,6 +84,15 @@ export class BarRamonService {
             `${this.cocktailPath}/${id}`
         )
         return docData(cocktailDocument) as Observable<Cocktail>
+    }
+
+    addUpdateCocktail(cocktail: Cocktail): Promise<void> {
+        let id = cocktail.RecipeName.replaceAll(" ", "-").toLowerCase()
+        const cocktailCollection = doc(
+            this.firestore,
+            `${this.cocktailPath}/${id}`
+        )
+        return setDoc(cocktailCollection, cocktail)
     }
 
     /**

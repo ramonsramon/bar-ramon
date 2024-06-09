@@ -4,7 +4,7 @@ service cloud.firestore {
   match /databases/{database}/documents {
     match /cocktails/{cocktail} {
       allow read
-      allow write: if request.auth != null && get(/databases/{database}/documents/users/$(request.auth.uid)).data.admin == true
+      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.admin == true
     }
   }
 }
