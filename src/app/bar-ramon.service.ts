@@ -86,15 +86,13 @@ export class BarRamonService {
         return docData(cocktailDocument) as Observable<Cocktail>
     }
 
-    addUpdateCocktail(cocktail: Cocktail) {
+    addUpdateCocktail(cocktail: Cocktail): Promise<void> {
         let id = cocktail.RecipeName.replaceAll(" ", "-").toLowerCase()
         const cocktailCollection = doc(
             this.firestore,
             `${this.cocktailPath}/${id}`
         )
-        setDoc(cocktailCollection, cocktail).then((d) => {
-            console.log(d)
-        })
+        return setDoc(cocktailCollection, cocktail)
     }
 
     /**

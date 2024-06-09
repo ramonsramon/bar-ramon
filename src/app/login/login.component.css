@@ -1,3 +1,6 @@
+.signInForm {
+    height: calc(100vh - 335px);
+}
 form {
     display: flex;
     flex-direction: column;

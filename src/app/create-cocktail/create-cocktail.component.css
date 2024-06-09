@@ -28,6 +28,6 @@ mat-divider {
     justify-content: end;
 }
 
-button {
+.action > button {
     width: 30%;
 }

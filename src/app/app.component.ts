@@ -14,7 +14,10 @@ import { FooterComponent } from "./footer/footer.component"
     styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-    navLinks: NavLink[] = [{ title: "Home", path: "/" }]
+    navLinks: NavLink[] = [
+        { title: "Home", path: "/" },
+        { title: "Add Cocktail", path: "/create/cocktail" },
+    ]
 
     constructor(private ga: Analytics, private router: Router) {
         afterNextRender(() => {

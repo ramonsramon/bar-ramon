@@ -83,13 +83,22 @@ export class CreateCocktailComponent {
     submit() {
         let cocktail = Object.assign({}, this.createCocktailForm.value)
         if (cocktail.RecipeName) {
-            let totalTime =
-                Number(cocktail.PrepTime) + Number(cocktail.CookTime)
-            cocktail.TotalTime = "PT" + String(totalTime) + "M"
-            cocktail.CookTime = "PT" + String(cocktail.CookTime) + "M"
-            cocktail.PrepTime = "PT" + String(cocktail.PrepTime) + "M"
+            if (cocktail.PrepTime) {
+                let totalTime =
+                    Number(cocktail.PrepTime) + Number(cocktail.CookTime)
+                cocktail.TotalTime = "PT" + String(totalTime) + "M"
+            }
+
+            cocktail.CookTime = cocktail.CookTime
+                ? "PT" + String(cocktail.CookTime) + "M"
+                : ""
+            cocktail.PrepTime = cocktail.PrepTime
+                ? "PT" + String(cocktail.PrepTime) + "M"
+                : ""
             cocktail.Title = "How to make a " + cocktail.RecipeName
-            cocktail.VideoUploadDate = cocktail.VideoUploadDate + ":00+08:00"
+            cocktail.VideoUploadDate = cocktail.VideoUploadDate
+                ? cocktail.VideoUploadDate + ":00+08:00"
+                : ""
             let now = new Date()
             let fullYear = now.getFullYear().toString()
             let month = now.getMonth().toString()
@@ -97,8 +106,14 @@ export class CreateCocktailComponent {
             cocktail.PublishDate = `${fullYear}-${
                 month.length > 1 ? month : "0" + month
             }-${date.length > 1 ? date : "0" + date}`
-            console.log(cocktail)
-            this.barRamonService.addUpdateCocktail(cocktail as Cocktail)
+            this.barRamonService
+                .addUpdateCocktail(cocktail as Cocktail)
+                .then(() => {
+                    console.log("Cocktail Create/Update Succesfully")
+                })
+                .catch((err) => {
+                    console.error("Issue creating/updating cocktail", err)
+                })
         }
     }
 }
