@@ -1,4 +1,5 @@
 import { Routes } from "@angular/router"
+import { authGuard } from "./auth.guard"
 
 export const routes: Routes = [
     {
@@ -22,6 +23,7 @@ export const routes: Routes = [
     },
     {
         path: "create/cocktail",
+        canActivate: [authGuard],
         loadComponent: () =>
             import("./create-cocktail/create-cocktail.component").then(
                 (mod) => mod.CreateCocktailComponent

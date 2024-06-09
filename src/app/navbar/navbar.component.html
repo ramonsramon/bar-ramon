@@ -10,6 +10,9 @@
             @for (navLink of navLinks; track navLink.title) {
             <a [routerLink]="navLink.path">{{ navLink.title }}</a>
             } @if (user$ | async) {
+            <a routerLink="create/cocktail" class="logout-btn"
+                >Create Cocktail</a
+            >
             <a class="logout-btn" (click)="logout()">Logout</a>
             }
         </div>
@@ -20,6 +23,10 @@
             <a [routerLink]="navLink.path">{{ navLink.title }}</a>
             <hr />
             } @if (user$ | async) {
+            <a routerLink="create/cocktail" class="logout-btn"
+                >Create Cocktail</a
+            >
+            <hr />
             <a class="logout-btn" (click)="logout()">Logout</a>
             }
         </div>
