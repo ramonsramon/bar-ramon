@@ -9,6 +9,6 @@ export const environment = {
         measurementId: "G-DWJBXE84Y1",
     },
     databaseId: "test",
-    emailServiceUrl: "https://email.aggieramon.com",
+    emailServiceUrl: "https://bar-ramon-api-sbptfx2vlq-uc.a.run.app",
     assetsUrl: "https://storage.googleapis.com/bar-ramon.appspot.com",
 }
